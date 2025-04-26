@@ -58,11 +58,12 @@ export class Icon {
   //   target: The reference node next to which any tooltip will be rendered.
   //           If not provided, defaults to the image itself.
   make(size, suppressTooltip, target) {
+    const icon_url = `https://raw.githubusercontent.com/the-disco-option/ashes-calculator-images/refs/heads/main/public/images/${this.key}.png`
     if (this.obj.icon_col === undefined) {
       let img = d3
         .select(makeEmptyIcon(32))
         .classed('icon', true)
-        .style('background', 'url(images/' + this.key + '.png)')
+        .style('background', `url(${icon_url})`)
         .style('background-size', 'contain')
       if (!suppressTooltip && this.obj.renderTooltip) {
         let self = this
