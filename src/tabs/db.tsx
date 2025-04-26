@@ -53,7 +53,7 @@ const SlowTable = memo(function SlowTable({ search }: { search: string }) {
             <td>{item.name}</td>
             <td>
               <img
-                src={`images/${item.key}.png`}
+                src={`https://raw.githubusercontent.com/the-disco-option/ashes-calculator-images/refs/heads/main/public/images/${item.key}.png`}
                 height="16px"
                 width="16px"
                 loading="lazy"
