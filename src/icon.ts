@@ -137,7 +137,7 @@ export function makeEmptyIcon(size) {
     .classed('icon', true)
     // Chrome wants the <img> element to have a src attribute, or it will
     // draw a border around it. Cram in this transparent 1x1 pixel image.
-    .attr('src', 'images/pixel.gif')
+    .attr('src', 'images/pixel.png')
   if (size) {
     img.attr('width', size).attr('height', size)
   }
