@@ -1,6 +1,6 @@
 # Ashes of Creation Calculator
 
-[Go To Calculator](https://calculator.coppercloud.no)
+[Go To Calculator](https://calculator.coppercloud.no?ref=GitHubRepo)
 
 Ashes Calculator a tool for calculating crafting requirements for items in[Ashes of Creation](https://ashesofcreation.com). Still a work in progess. More items, icons and functions are being added.
 
