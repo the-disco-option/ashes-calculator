@@ -1,11 +1,12 @@
 # Ashes of Creation Calculator
 
-This is the repostory for the [Ashes of Creation Calculator](https://the-disco-option.github.io/ashes-calculator/calc.html), a tool for calculating crafting requirements for [Ashes of Creation](https://ashesofcreation.com).
+[Go To Calculator](https://calculator.coppercloud.no)
+
+Ashes Calculator a tool for calculating crafting requirements for items in[Ashes of Creation](https://ashesofcreation.com). Still a work in progess. More items, icons and functions are being added.
 
 ## Running locally
 
 `npm run dev` or `pnpm dev`
-
 
 ## Building
 
