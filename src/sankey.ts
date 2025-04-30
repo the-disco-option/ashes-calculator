@@ -239,7 +239,11 @@ export function renderSankey(data, direction, ignore) {
     .attr('height', iconSize / 2)
   linkIcon
     .append('image')
-    .attr('xlink:href', 'images/sprite-sheet-' + sheetHash + '.png')
+    .attr(
+      'xlink:href',
+      (d) =>
+        `https://raw.githubusercontent.com/the-disco-option/ashes-calculator-images/refs/heads/main/public/images/${d.item.key}.png`
+    )
     .attr('width', sheetWidth)
     .attr('height', sheetHeight)
   if (direction === 'down') {

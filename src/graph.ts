@@ -164,7 +164,11 @@ export function renderNode(
     .attr('height', iconSize)
     .append('image')
     .classed('ignore', (d) => ignore.has(d.recipe))
-    .attr('xlink:href', (d) => 'images/' + d.recipe.icon.key + '.png')
+    .attr(
+      'xlink:href',
+      (d) =>
+        `https://raw.githubusercontent.com/the-disco-option/ashes-calculator-images/refs/heads/main/public/images/${d.recipe.icon.key}.png`
+    )
     .attr('width', iconSize)
     .attr('height', iconSize)
   // node text (building count, or plain rate if no building)
@@ -204,7 +208,11 @@ export function renderNode(
     .attr('width', iconSize)
     .attr('height', iconSize)
     .append('image')
-    .attr('xlink:href', (d) => 'images/' + d.building.icon.key + '.png')
+    .attr(
+      'xlink:href',
+      (d) =>
+        `https://raw.githubusercontent.com/the-disco-option/ashes-calculator-images/refs/heads/main/public/images/${d.building.icon.key}.png`
+    )
     .attr('width', iconSize)
     .attr('height', iconSize)
 }
