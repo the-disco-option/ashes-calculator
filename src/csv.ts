@@ -1,15 +1,16 @@
 /**
  * fetch a csv file and parse it to an array of rows. Headers row required.
- * @param {string} filename
  */
-export async function csv(filename) {
+export async function csv(filename: string) {
   if (!filename.endsWith('.csv')) {
     console.debug(`DEBUG: "${filename}" does not have the .csv filename`)
   }
 
   const res = await fetch(filename)
   if (!res.ok) {
-    throw new Error(res.status)
+    throw new Error(
+      `Failed to fetch CSV "${filename}": ${res.status} ${res.statusText}`
+    )
   }
 
   const text = await res.text()
@@ -18,16 +19,16 @@ export async function csv(filename) {
     .filter((line) => line.trim().length > 0) // filter out empty lines
     .map((line) => line.split(';'))
   const no_columns = headers.length
-  /** @type {Array<Record<string, unknown>>} */
-  const out = []
+
+  const out: Record<string, any>[] = []
   for (const [index, row] of rows.entries()) {
     if (row.length !== no_columns) {
       throw new Error(`CSV: ${filename}: Wrong row length at index ${index}`)
     }
     const obj = {}
-    for (const [headerInex, headerKey] of headers.entries()) {
+    for (const [headerIndex, headerKey] of headers.entries()) {
       const key = headerKey.toLowerCase()
-      obj[key] = row[headerInex]
+      obj[key] = row[headerIndex]
     }
 
     out.push(obj)
