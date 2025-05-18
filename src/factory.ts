@@ -20,7 +20,7 @@ import { Item } from './item'
 import { ModuleSpec } from './module'
 import { PriorityList } from './priority'
 import { Rational, zero, half, one } from './rational'
-import { DISABLED_RECIPE_PREFIX } from './recipe'
+import { DISABLED_RECIPE_PREFIX, Recipe } from './recipe'
 import { solve } from './solve'
 import { BuildTarget } from './target'
 import { reapTooltips } from './tooltip'
@@ -124,6 +124,8 @@ function getBuildingGroups(buildings) {
 
 class FactorySpecification {
   items: Map<string, Item> | null
+  fuel: any
+  recipes: Map<string, Recipe> | null
   constructor() {
     this.items = null
     this.recipes = null
@@ -444,8 +446,8 @@ class FactorySpecification {
     }
     return true
   }
-  getRecipes(item) {
-    let recipes = []
+  getRecipes(item: Item) {
+    let recipes: Recipe[] = []
     for (let recipe of item.recipes) {
       if (!this.disable.has(recipe)) {
         recipes.push(recipe)

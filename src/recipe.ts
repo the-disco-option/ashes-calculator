@@ -13,10 +13,13 @@ See the License for the specific language governing permissions and
 limitations under the License.*/
 import { spec } from './factory'
 import { Icon, sprites } from './icon'
+import { Item } from './item'
 import { Rational, zero, one } from './rational'
 import * as d3 from 'd3'
 
 export class Ingredient {
+  item: Item
+  amount: Rational
   constructor(item, amount) {
     this.item = item
     this.amount = amount
@@ -31,7 +34,22 @@ class SurfaceCondition {
   }
 }
 
-export class Recipe {
+export interface RecipeInterface {
+  key: string
+  name: string
+  ingredients: Ingredient[]
+  products: Ingredient[]
+  icon: Icon
+  time: Rational
+}
+
+export class Recipe implements RecipeInterface {
+  key: string
+  name: string
+  ingredients: Ingredient[]
+  products: Ingredient[]
+  icon: Icon
+  time: Rational
   constructor(
     key,
     name,
@@ -69,6 +87,7 @@ export class Recipe {
     this.icon_row = row
     this.icon = new Icon(this, products[0].item.name, products[0].item.key)
   }
+
   fuelIngredient() {
     let building = spec.getBuilding(this)
     if (
@@ -464,7 +483,7 @@ function getSteam(data) {
 
 export function getRecipes(data, items) {
   let hundred = Rational.from_float(100)
-  let recipes = new Map()
+  let recipes = new Map<string, Recipe>()
 
   for (let d of data.recipes) {
     let r = makeRecipe(data, items, d)

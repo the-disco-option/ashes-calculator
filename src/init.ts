@@ -1,14 +1,14 @@
-/**
- * @typedef {Object} Material
- * @property {string} key - The unique identifier for the material.
- * @property {Object} localized_name - The localized names of the material.
- * @property {string} localized_name.en - The English name of the material.
- * @property {number} stack_size - The stack size of the material.
- * @property {string} order - The order string for sorting.
- * @property {string} group - The group the material belongs to.
- * @property {string} subgroup - The subgroup the material belongs to.
- * @property {string} type - The type of the material.
- */
+interface Material {
+  key: string
+  localized_name: {
+    en: string
+  }
+  stack_size: number
+  order: string
+  group: string
+  subgroup: string
+  type: string
+}
 
 /**
  * @typedef {Object} Building
@@ -86,7 +86,7 @@ import { getSprites } from './icon'
 import { getItems } from './item'
 import { getModules } from './module'
 import { getPlanets } from './planet'
-import { getRecipes } from './recipe'
+import { getRecipes, RecipeInterface } from './recipe'
 import {
   currentMod,
   MODIFICATIONS,
@@ -451,16 +451,10 @@ function fillIngredients(m) {
     }
   }
 
-  console.log(m.name, ingredients, m)
   return ingredients
 }
 
-/**
- *
- * @param {Array<Material>} materials
- * @returns {Array<Recipe>}
- */
-function createRecipes(materials) {
+function createRecipes(materials: Array<Material>) {
   return materials
     .filter((mat) => mat.skill.category != Gathering)
     .filter(
@@ -578,6 +572,7 @@ async function loadData(modName, settings) {
   let buildings = getBuildings(data, items)
   let belts = getBelts(data)
   let fuel = getFuel(data, items)
+  console.log(recipes)
   getSprites(data)
   let itemGroups = getItemGroups(items, data)
   spec.setData(

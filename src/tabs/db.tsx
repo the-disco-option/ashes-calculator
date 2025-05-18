@@ -22,7 +22,16 @@ function DatebaseTab() {
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search for item"
         />
-        <SlowTable search={deferredSearch} />
+        <div className="flex" style={{ display: 'flex' }}>
+          <div>
+            <div>Items</div>
+            <SlowTable search={deferredSearch} />
+          </div>
+          <div>
+            <div>Recipes</div>
+            <RecipesTable search={deferredSearch} />
+          </div>
+        </div>
       </div>
     </div>
   )
@@ -54,6 +63,45 @@ const SlowTable = memo(function SlowTable({ search }: { search: string }) {
             <td>
               <img
                 src={`https://raw.githubusercontent.com/the-disco-option/ashes-calculator-images/refs/heads/main/public/images/${item.key}.png`}
+                height="16px"
+                width="16px"
+                loading="lazy"
+              />
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  )
+})
+
+const RecipesTable = memo(function SlowTable({ search }: { search: string }) {
+  // look into spec.findRecipes, but needs to select an item first. connect to the other table or make an "item page"
+  const recipes = spec.recipes ? [...spec.recipes.values()] : []
+  const filteredRecipes = recipes.filter(
+    (recipe) => recipe.key.includes(search) || recipe.name.includes(search)
+  )
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th>Key</th>
+          <th>Name</th>
+          <th>Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        {filteredRecipes.map((recipe) => (
+          <tr key={recipe.key}>
+            <td>
+              {/* <ItemTooltip item={recipe}> */}
+              <span>{recipe.key}</span>
+              {/* </ItemTooltip> */}
+            </td>
+            <td>{recipe.ingredients.map((ing) => ing.item.name).join()}</td>
+            <td>
+              <img
+                src={`https://raw.githubusercontent.com/the-disco-option/ashes-calculator-images/refs/heads/main/public/images/${recipe.key}.png`}
                 height="16px"
                 width="16px"
                 loading="lazy"
