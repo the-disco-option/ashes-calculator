@@ -12,10 +12,12 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '../new-tooltip'
 function DatebaseTab() {
   const [search, setSearch] = useState('')
   const deferredSearch = useDeferredValue(search)
+  const [selectedItem, setItem] = useState<Item | undefined>()
 
   return (
     <div>
       <h3>Database</h3>
+      <div>{selectedItem?.name}</div>
       <div>
         <input
           value={search}
@@ -25,11 +27,11 @@ function DatebaseTab() {
         <div className="flex" style={{ display: 'flex' }}>
           <div>
             <div>Items</div>
-            <SlowTable search={deferredSearch} />
+            <SlowTable search={deferredSearch} setItem={setItem} />
           </div>
           <div>
             <div>Recipes</div>
-            <RecipesTable search={deferredSearch} />
+            <RecipesTable item={selectedItem} />
           </div>
         </div>
       </div>
@@ -37,11 +39,19 @@ function DatebaseTab() {
   )
 }
 
-const SlowTable = memo(function SlowTable({ search }: { search: string }) {
+const SlowTable = memo(function SlowTable({
+  search,
+  setItem,
+}: {
+  search: string
+  setItem?: (item: Item) => void
+}) {
   const items = spec.items ? [...spec.items.values()] : []
+
   const filteredItems = items.filter(
     (item) => item.key.includes(search) || item.name.includes(search)
   )
+
   return (
     <table>
       <thead>
@@ -53,7 +63,7 @@ const SlowTable = memo(function SlowTable({ search }: { search: string }) {
       </thead>
       <tbody>
         {filteredItems.map((item) => (
-          <tr key={item.key}>
+          <tr key={item.key} onClick={() => setItem?.(item)}>
             <td>
               <ItemTooltip item={item}>
                 <span>{item.key}</span>
@@ -75,42 +85,56 @@ const SlowTable = memo(function SlowTable({ search }: { search: string }) {
   )
 })
 
-const RecipesTable = memo(function SlowTable({ search }: { search: string }) {
-  // look into spec.findRecipes, but needs to select an item first. connect to the other table or make an "item page"
-  const recipes = spec.recipes ? [...spec.recipes.values()] : []
-  const filteredRecipes = recipes.filter(
-    (recipe) => recipe.key.includes(search) || recipe.name.includes(search)
+const RecipesTable = memo(function SlowTable({ item }: { item?: Item }) {
+  const recipes = item ? spec.getUses(item) : []
+  console.log(recipes)
+
+  // Group recipes by key
+  const recipesByKey = recipes.reduce(
+    (acc, recipe) => {
+      acc[recipe.key] = acc[recipe.key] || []
+      acc[recipe.key].push(recipe)
+      return acc
+    },
+    {} as Record<string, typeof recipes>
   )
+
+  console.log(recipesByKey)
+
+  const dedupedRecipes = Object.values(recipesByKey).map((group) => group[0]) // needs dedupe workaround beacause some items have more than once recipe for it.
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Key</th>
-          <th>Name</th>
-          <th>Image</th>
-        </tr>
-      </thead>
-      <tbody>
-        {filteredRecipes.map((recipe) => (
-          <tr key={recipe.key}>
-            <td>
-              {/* <ItemTooltip item={recipe}> */}
-              <span>{recipe.key}</span>
-              {/* </ItemTooltip> */}
-            </td>
-            <td>{recipe.ingredients.map((ing) => ing.item.name).join()}</td>
-            <td>
-              <img
-                src={`https://raw.githubusercontent.com/the-disco-option/ashes-calculator-images/refs/heads/main/public/images/${recipe.key}.png`}
-                height="16px"
-                width="16px"
-                loading="lazy"
-              />
-            </td>
+    <div>
+      <div>Recipe Item {item?.name}</div>
+      <table>
+        <thead>
+          <tr>
+            <th>Key</th>
+            <th>Ingredients</th>
+            <th>Image</th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {dedupedRecipes.map((recipe) => (
+            <tr key={recipe.key}>
+              <td>
+                {/* <ItemTooltip item={recipe}> */}
+                <span>{recipe.key}</span>
+                {/* </ItemTooltip> */}
+              </td>
+              <td>{recipe.ingredients.map((ing) => ing.item.name).join()}</td>
+              <td>
+                <img
+                  src={`https://raw.githubusercontent.com/the-disco-option/ashes-calculator-images/refs/heads/main/public/images/${recipe.key}.png`}
+                  height="16px"
+                  width="16px"
+                  loading="lazy"
+                />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   )
 })
 

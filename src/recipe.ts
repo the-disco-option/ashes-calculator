@@ -50,6 +50,7 @@ export class Recipe implements RecipeInterface {
   products: Ingredient[]
   icon: Icon
   time: Rational
+  unique: string
   constructor(
     key,
     name,
@@ -86,6 +87,7 @@ export class Recipe implements RecipeInterface {
     this.icon_col = col
     this.icon_row = row
     this.icon = new Icon(this, products[0].item.name, products[0].item.key)
+    this.unique = crypto.randomUUID()
   }
 
   fuelIngredient() {

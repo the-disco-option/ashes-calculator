@@ -419,8 +419,8 @@ class FactorySpecification {
   isDefaultPriority() {
     return this.priority.equalArray(this.defaultPriority)
   }
-  getUses(item) {
-    let recipes = []
+  getUses(item: Item) {
+    let recipes: Recipe[] = []
     for (let recipe of item.uses) {
       if (!this.disable.has(recipe)) {
         recipes.push(recipe)

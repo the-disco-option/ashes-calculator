@@ -19,7 +19,18 @@ export class Item {
   key: string
   name: string
   recipes: Recipe[]
-  constructor(key: string, name, col, row, phase, group, subgroup, order) {
+  uses: Recipe[]
+  icon: Icon
+  constructor(
+    key: string,
+    name: string,
+    col,
+    row,
+    phase,
+    group,
+    subgroup,
+    order
+  ) {
     this.key = key
     this.name = name
     this.phase = phase
@@ -28,7 +39,7 @@ export class Item {
 
     this.icon_col = col
     this.icon_row = row
-    this.icon = new Icon(this)
+    this.icon = new Icon(this, name, key)
 
     this.group = group
     this.subgroup = subgroup
