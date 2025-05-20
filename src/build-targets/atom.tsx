@@ -50,6 +50,7 @@ export const updateBuildingTarget = (target: BuildTarget) => {
       return
     }
     target_.count = target.rate.toFloat() * 60
+    target_.itemKey = target.itemKey
   })
 }
 

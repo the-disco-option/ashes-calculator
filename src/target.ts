@@ -29,6 +29,7 @@ function itemHandler(target) {
     target.item = item
     target.displayRecipes()
     spec.updateSolution()
+    updateBuildingTarget(target)
   }
 }
 
