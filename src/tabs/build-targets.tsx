@@ -24,6 +24,7 @@ function DatebaseTab() {
           <li key={bt.id}>
             <button>x</button>
             {bt.itemKey}
+            {bt.count}
           </li>
         ))}
         <li>

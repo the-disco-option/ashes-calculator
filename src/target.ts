@@ -11,11 +11,13 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.*/
+import { updateBuildingTarget } from './build-targets/atom'
 import { makeDropdown, addInputs } from './dropdown'
 import { spec } from './factory'
 import { Item } from './item'
 import { Rational, zero, one } from './rational'
 import * as d3 from 'd3'
+import { Recipe } from './recipe'
 
 const SELECTED_INPUT = 'selected'
 
@@ -41,6 +43,7 @@ function changeBuildingCountHandler(target) {
   return function () {
     target.buildingsChanged()
     spec.updateSolution()
+    updateBuildingTarget(target)
   }
 }
 
@@ -48,6 +51,7 @@ function changeRateHandler(target) {
   return function () {
     target.rateChanged()
     spec.updateSolution()
+    updateBuildingTarget(target)
   }
 }
 
@@ -120,6 +124,9 @@ export class BuildTarget {
   itemKey: string
   index: number
   itemGroups: []
+  rate: Rational
+  buildings: Rational
+  recipe: Recipe | null
   constructor(index, itemKey, item, itemGroups) {
     this.index = index
     this.itemKey = itemKey

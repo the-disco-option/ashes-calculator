@@ -43,6 +43,16 @@ export const removeBuildingTarget = (target: BuildTarget) => {
   })
 }
 
+export const updateBuildingTarget = (target: BuildTarget) => {
+  factoryStore.set(factoryAtom, (draft) => {
+    const target_ = draft.targets.at(target.index)
+    if (!target_) {
+      return
+    }
+    target_.count = target.rate.toFloat() * 60
+  })
+}
+
 export function FactoryProvider({ children }: PropsWithChildren) {
   return <Provider store={factoryStore}>{children}</Provider>
 }
