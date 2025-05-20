@@ -13,6 +13,7 @@ See the License for the specific language governing permissions and
 limitations under the License.*/
 import { makeDropdown, addInputs } from './dropdown'
 import { spec } from './factory'
+import { Item } from './item'
 import { Rational, zero, one } from './rational'
 import * as d3 from 'd3'
 
@@ -115,6 +116,10 @@ let targetCount = 0
 let recipeSelectorCount = 0
 
 export class BuildTarget {
+  item: Item
+  itemKey: string
+  index: number
+  itemGroups: []
   constructor(index, itemKey, item, itemGroups) {
     this.index = index
     this.itemKey = itemKey

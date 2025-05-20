@@ -18,7 +18,7 @@ import * as d3 from 'd3'
 
 let thirty = Rational.from_float(30)
 
-class Building {
+export class Building {
   constructor(
     key,
     name,

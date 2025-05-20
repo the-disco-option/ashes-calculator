@@ -13,6 +13,7 @@ See the License for the specific language governing permissions and
 limitations under the License.*/
 
 import { getCycleRecipes } from './cycle'
+import { FactorySpecification } from './factory'
 import { Matrix } from './matrix'
 import { Rational, minusOne, zero, one } from './rational'
 import { Ingredient } from './recipe'
@@ -127,7 +128,7 @@ Rows:
 [result]
 */
 
-export function solve(spec, fullOutputs) {
+export function solve(spec: FactorySpecification, fullOutputs) {
   let outputs = new Map()
   for (let { item, rate, recipe } of fullOutputs) {
     rate = rate.add(outputs.get(item) || zero)

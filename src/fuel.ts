@@ -17,7 +17,7 @@ import * as d3 from 'd3'
 
 let energySuffixes = ['J', 'kJ', 'MJ', 'GJ', 'TJ', 'PJ']
 
-class Fuel {
+export class Fuel {
   constructor(key, name, col, row, item, category, value) {
     this.key = key
     this.name = name
