@@ -10,34 +10,27 @@ import { spec } from '../factory'
 import { Item } from '../item'
 import { Tooltip, TooltipContent, TooltipTrigger } from '../new-tooltip'
 import { BuildTarget } from '../target'
-
-function subscribe(callback: () => void) {
-  //   spec.addEventListener('buildTargets', callback)
-  return () => {
-    // spec.removeEventListener('buildTargets', callback)
-  }
-}
-
-let buildTargets: BuildTarget[] = []
-
-function getSnapshot() {
-  return buildTargets //spec.getBuildTargets()
-}
-
-function useBuildTargets() {
-  return useSyncExternalStore(subscribe, getSnapshot)
-}
+import { FactoryProvider, useFactory } from '../build-targets/atom'
 
 function DatebaseTab() {
   const [search, setSearch] = useState('')
-  const build_targets = useBuildTargets()
+  const [factory] = useFactory()
 
   return (
-    <ul>
-      {build_targets.map((bt) => (
-        <li key={bt.itemKey}>{bt.itemKey}</li>
-      ))}
-    </ul>
+    <div>
+      <div>Build Targets</div>
+      <ul>
+        {factory.targets.map((bt) => (
+          <li key={bt.id}>
+            <button>x</button>
+            {bt.itemKey}
+          </li>
+        ))}
+        <li>
+          <button onClick={() => spec.addTarget('water')}>Add</button>
+        </li>
+      </ul>
+    </div>
   )
 }
 
@@ -104,5 +97,9 @@ export function initBuildTargets() {
     throw new Error('root missing')
   }
   const root = createRoot(root_el)
-  root.render(<DatebaseTab />)
+  root.render(
+    <FactoryProvider>
+      <DatebaseTab />
+    </FactoryProvider>
+  )
 }

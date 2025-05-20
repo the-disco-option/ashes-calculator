@@ -12,6 +12,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.*/
 import { Formatter } from './align'
+import { addBuildingTarget, removeBuildingTarget } from './build-targets/atom'
 import { renderDebug } from './debug'
 import { displayItems } from './display'
 import { currentTab } from './events'
@@ -42,6 +43,7 @@ class FactorySpecification {
   items: Map<string, Item> | null
   fuel: any
   recipes: Map<string, Recipe> | null
+  buildTargets: BuildTarget[]
   constructor() {
     this.items = null
     this.recipes = null
@@ -595,9 +597,11 @@ class FactorySpecification {
     )
     this.buildTargets.push(target)
     d3.select('#targets').insert(() => target.element, '#plusButton')
+    addBuildingTarget(itemKey)
     return target
   }
   removeTarget(target) {
+    removeBuildingTarget(target)
     this.buildTargets.splice(target.index, 1)
     for (let i = target.index; i < this.buildTargets.length; i++) {
       this.buildTargets[i].index--
