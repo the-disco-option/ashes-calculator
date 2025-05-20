@@ -38,90 +38,6 @@ let DEFAULT_BUILDINGS = new Set([
   'electric-mining-drill',
 ])
 
-class BuildingSet {
-  constructor(building) {
-    this.categories = new Set(building.categories)
-    this.buildings = new Set([building])
-  }
-  merge(other) {
-    for (let category of other.categories) {
-      this.categories.add(category)
-    }
-    for (let building of other.buildings) {
-      this.buildings.add(building)
-    }
-  }
-  overlap(other) {
-    for (let category of this.categories) {
-      if (other.categories.has(category)) {
-        return true
-      }
-    }
-    return false
-  }
-}
-
-export function buildingSort(buildings) {
-  buildings.sort(function (a, b) {
-    if (a.less(b)) {
-      return -1
-    } else if (b.less(a)) {
-      return 1
-    }
-    return 0
-  })
-}
-
-class BuildingGroup {
-  constructor(bSet) {
-    this.buildings = Array.from(bSet)
-    buildingSort(this.buildings)
-    this.building = this.getDefault()
-  }
-  getDefault() {
-    for (let building of this.buildings) {
-      if (DEFAULT_BUILDINGS.has(building.key)) {
-        return building
-      }
-    }
-    return this.buildings[this.buildings.length - 1]
-  }
-  getBuilding(recipe) {
-    let b = null
-    for (let building of this.buildings) {
-      if (building.categories.has(recipe.category)) {
-        b = building
-        if (building === this.building || this.building.less(building)) {
-          return building
-        }
-      }
-    }
-    return b
-  }
-}
-
-function getBuildingGroups(buildings) {
-  let sets = new Set()
-  for (let building of buildings) {
-    let set = new BuildingSet(building)
-    for (let s of Array.from(sets)) {
-      if (set.overlap(s)) {
-        set.merge(s)
-        sets.delete(s)
-      }
-    }
-    sets.add(set)
-  }
-  let groups = new Map()
-  for (let { categories, buildings } of sets) {
-    let group = new BuildingGroup(buildings)
-    for (let cat of categories) {
-      groups.set(cat, group)
-    }
-  }
-  return groups
-}
-
 class FactorySpecification {
   items: Map<string, Item> | null
   fuel: any
@@ -792,6 +708,90 @@ class FactorySpecification {
       renderDebug()
     }
   }
+}
+
+class BuildingSet {
+  constructor(building) {
+    this.categories = new Set(building.categories)
+    this.buildings = new Set([building])
+  }
+  merge(other) {
+    for (let category of other.categories) {
+      this.categories.add(category)
+    }
+    for (let building of other.buildings) {
+      this.buildings.add(building)
+    }
+  }
+  overlap(other) {
+    for (let category of this.categories) {
+      if (other.categories.has(category)) {
+        return true
+      }
+    }
+    return false
+  }
+}
+
+export function buildingSort(buildings) {
+  buildings.sort(function (a, b) {
+    if (a.less(b)) {
+      return -1
+    } else if (b.less(a)) {
+      return 1
+    }
+    return 0
+  })
+}
+
+class BuildingGroup {
+  constructor(bSet) {
+    this.buildings = Array.from(bSet)
+    buildingSort(this.buildings)
+    this.building = this.getDefault()
+  }
+  getDefault() {
+    for (let building of this.buildings) {
+      if (DEFAULT_BUILDINGS.has(building.key)) {
+        return building
+      }
+    }
+    return this.buildings[this.buildings.length - 1]
+  }
+  getBuilding(recipe) {
+    let b = null
+    for (let building of this.buildings) {
+      if (building.categories.has(recipe.category)) {
+        b = building
+        if (building === this.building || this.building.less(building)) {
+          return building
+        }
+      }
+    }
+    return b
+  }
+}
+
+function getBuildingGroups(buildings) {
+  let sets = new Set()
+  for (let building of buildings) {
+    let set = new BuildingSet(building)
+    for (let s of Array.from(sets)) {
+      if (set.overlap(s)) {
+        set.merge(s)
+        sets.delete(s)
+      }
+    }
+    sets.add(set)
+  }
+  let groups = new Map()
+  for (let { categories, buildings } of sets) {
+    let group = new BuildingGroup(buildings)
+    for (let cat of categories) {
+      groups.set(cat, group)
+    }
+  }
+  return groups
 }
 
 export function resetSpec() {
