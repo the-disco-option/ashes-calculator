@@ -597,7 +597,7 @@ class FactorySpecification {
     )
     this.buildTargets.push(target)
     d3.select('#targets').insert(() => target.element, '#plusButton')
-    addBuildingTarget(itemKey)
+    addBuildingTarget(target)
     return target
   }
   removeTarget(target) {

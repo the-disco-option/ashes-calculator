@@ -14,6 +14,7 @@ export interface BuildTargetInterface {
   id: string
   itemKey: string
   count: number
+  recipeKey?: string
 }
 
 export interface FactoryAtomInterface {
@@ -27,11 +28,12 @@ export const factoryStore = createStore()
 export const useFactory = () => useAtom(factoryAtom)
 
 // these actions are used by the js code to update the store. Don't call from react.
-export const addBuildingTarget = (targetItemKey: string = 'water') => {
+export const addBuildingTarget = (target: BuildTarget) => {
   factoryStore.set(factoryAtom, (draft) => {
     draft.targets.push({
-      itemKey: targetItemKey,
-      count: 1,
+      itemKey: target.itemKey,
+      recipeKey: target.recipe?.key,
+      count: target.rate.toFloat() * 60,
       id: crypto.randomUUID(),
     })
   })
@@ -51,6 +53,7 @@ export const updateBuildingTarget = (target: BuildTarget) => {
     }
     target_.count = target.rate.toFloat() * 60
     target_.itemKey = target.itemKey
+    target_.recipeKey = target.recipe?.key
   })
 }
 
