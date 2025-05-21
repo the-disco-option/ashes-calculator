@@ -57,6 +57,12 @@ export const updateBuildingTarget = (target: BuildTarget) => {
   })
 }
 
+export const clearBuildingTargets = () => {
+  factoryStore.set(factoryAtom, (draft) => {
+    draft.targets = []
+  })
+}
+
 export function FactoryProvider({ children }: PropsWithChildren) {
   return <Provider store={factoryStore}>{children}</Provider>
 }

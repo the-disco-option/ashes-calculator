@@ -133,9 +133,9 @@ function renderTab(settings) {
 
 // build targets
 
-function renderTargets(settings) {
-  spec.buildTargets = []
-  d3.selectAll('#targets li.target').remove()
+function renderTargets(settings: Map<string, string | undefined>) {
+  spec.resetTargets()
+  d3.selectAll('#targets li.target').remove() // TODO: remove
 
   let targetSetting = settings.get('items')
   if (targetSetting !== undefined && targetSetting !== '') {
@@ -143,7 +143,7 @@ function renderTargets(settings) {
     for (let targetString of targets) {
       let parts = targetString.split(':')
       let itemKey = parts[0]
-      if (!spec.items.has(itemKey)) {
+      if (!spec.items?.has(itemKey)) {
         console.log('unknown item:', itemKey)
         continue
       }
@@ -168,7 +168,7 @@ function renderTargets(settings) {
       }
     }
   } else {
-    spec.addTarget()
+    spec.addTarget() //DISCO: add the default item
   }
 }
 

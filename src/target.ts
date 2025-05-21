@@ -309,6 +309,7 @@ export class BuildTarget {
     this.buildings = Rational.from_string(this.buildingInput.value)
     this.rate = zero
     this.rateInput.value = ''
+    updateBuildingTarget(this)
   }
   setBuildings(count, recipe) {
     this.buildingInput.value = count
@@ -324,6 +325,7 @@ export class BuildTarget {
       spec.format.rateFactor
     )
     this.buildingInput.value = ''
+    updateBuildingTarget(this)
   }
   setRate(rate) {
     this.rateInput.value = rate

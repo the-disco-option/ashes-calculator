@@ -12,7 +12,11 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.*/
 import { Formatter } from './align'
-import { addBuildingTarget, removeBuildingTarget } from './build-targets/atom'
+import {
+  addBuildingTarget,
+  clearBuildingTargets,
+  removeBuildingTarget,
+} from './build-targets/atom'
 import { renderDebug } from './debug'
 import { displayItems } from './display'
 import { currentTab } from './events'
@@ -607,6 +611,10 @@ class FactorySpecification {
       this.buildTargets[i].index--
     }
     d3.select(target.element).remove()
+  }
+  resetTargets() {
+    this.buildTargets = []
+    clearBuildingTargets()
   }
   toggleIgnore(item) {
     let updateTargets = false
