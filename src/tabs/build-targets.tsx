@@ -25,6 +25,7 @@ function DatebaseTab() {
             <button>x</button>
             {bt.itemKey}
             {bt.count}
+            {bt.recipeKey}
           </li>
         ))}
         <li>

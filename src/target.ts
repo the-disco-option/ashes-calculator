@@ -267,6 +267,7 @@ export class BuildTarget {
       (d) => {
         self.recipe = d
         spec.updateSolution()
+        updateBuildingTarget(this)
       }
     )
     labels.append((d) => d.icon.make(32, false, dropdown.node()))
