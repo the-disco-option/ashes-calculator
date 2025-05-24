@@ -1,7 +1,9 @@
+import { z, safeParse } from 'zod/v4'
+
 /**
  * fetch a csv file and parse it to an array of rows. Headers row required.
  */
-export async function csv(filename: string) {
+export async function csv<T extends z.ZodTypeAny>(filename: string, schema: T) {
   if (!filename.endsWith('.csv')) {
     console.debug(`DEBUG: "${filename}" does not have the .csv filename`)
   }
@@ -14,13 +16,14 @@ export async function csv(filename: string) {
   }
 
   const text = await res.text()
+
   const [headers, ...rows] = text
     .split('\n')
     .filter((line) => line.trim().length > 0) // filter out empty lines
     .map((line) => line.split(';'))
   const no_columns = headers.length
 
-  const out: Record<string, any>[] = []
+  const out: z.infer<T>[] = []
   for (const [index, row] of rows.entries()) {
     if (row.length !== no_columns) {
       throw new Error(`CSV: ${filename}: Wrong row length at index ${index}`)
@@ -31,7 +34,7 @@ export async function csv(filename: string) {
       obj[key] = row[headerIndex]
     }
 
-    out.push(obj)
+    out.push(schema.parse(obj))
   }
   return out
 }

@@ -38,6 +38,9 @@ importers:
       typescript-event-target:
         specifier: ^1.1.1
         version: 1.1.1
+      zod:
+        specifier: ^3.25.28
+        version: 3.25.28
     devDependencies:
       '@types/d3':
         specifier: ^7.4.3
@@ -668,6 +671,9 @@ packages:
       yaml:
         optional: true
 
+  zod@3.25.28:
+    resolution: {integrity: sha512-/nt/67WYKnr5by3YS7LroZJbtcCBurDKKPBPWWzaxvVCGuG/NOsiKkrjoOhI8mJ+SQUXEbUzeB3S+6XDUEEj7Q==}
+
 snapshots:
 
   '@esbuild/aix-ppc64@0.25.1':
@@ -1232,3 +1238,5 @@ snapshots:
       rollup: 4.37.0
     optionalDependencies:
       fsevents: 2.3.3
+
+  zod@3.25.28: {}

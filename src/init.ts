@@ -1,3 +1,5 @@
+import { z } from 'zod/v4'
+
 interface Material {
   key: string
   localized_name: {
@@ -276,12 +278,28 @@ const artisan_skills_list = [
   ...other_skills.map((skill) => new ArtisanSkill(skill, Other)),
 ]
 
+type ParsedRecipe = {
+  key: string
+  name: string
+}
+const RecipeSchema = z
+  .looseObject({
+    key: z.string().optional(),
+    name: z.string(),
+    level: z.string().optional(),
+  })
+  .transform((r) => ({ ...r, key: `recipe-${r.key ?? slug(r.name)}` as const }))
+
+type Recipe = z.output<typeof RecipeSchema>
+
 async function loadMaterials() {
   const data = await Promise.all([
     ...artisan_skills_list.map((skill) =>
-      csv(`${file_path_prefix}/${skill.category.key}/${skill.key}.csv`).then(
-        (rows) =>
-          rows.map((row) => ({ ...row, skill: skill, key: slug(row.name) }))
+      csv(
+        `${file_path_prefix}/${skill.category.key}/${skill.key}.csv`,
+        RecipeSchema
+      ).then((rows) =>
+        rows.map((row) => ({ ...row, skill: skill, key: slug(row.name) }))
       )
     ),
   ])
@@ -487,7 +505,10 @@ function createRecipes(materials: Array<Material>) {
 }
 
 async function loadSkills() {
-  const skills_raw = await csv(`data/skills.csv`)
+  const skills_raw = await csv(
+    `data/skills.csv`,
+    z.looseObject({ name: z.string(), category: z.string() })
+  )
 
   const skills = skills_raw.map(
     (m) => new ArtisanSkill(m.name, CategoryMap.get(m.category))
@@ -512,14 +533,20 @@ interface Vendor {
 }
 
 async function loadVendors() {
-  const vendors: Vendor[] = (await csv(`data/vendors.csv`)).map(
-    (fields: RawVendor) => ({ id: slug(fields.name), ...fields })
-  )
+  const vendors: Vendor[] = (
+    await csv(
+      `data/vendors.csv`,
+      z.looseObject({ name: z.string(), desc: z.string() })
+    )
+  ).map((fields) => ({ id: slug(fields.name), ...fields }))
   const wares = await Promise.all(
     vendors.map(async (vendor) =>
-      (await csv(`data/vendors/${vendor.id}.csv`)).map(
-        (fields: RawVendorItem) => ({ id: slug(fields.name), ...fields })
-      )
+      (
+        await csv(
+          `data/vendors/${vendor.id}.csv`,
+          z.object({ name: z.string(), buyprice: z.string() })
+        )
+      ).map((fields) => ({ id: slug(fields.name), ...fields }))
     )
   )
 
