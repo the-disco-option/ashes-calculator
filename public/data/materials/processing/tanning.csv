@@ -1,5 +1,5 @@
-Name;Level;Category;Output;Amount1;Material1
-Animal Fat;Novice;Skinning;5;1;Grem Carcass
-Grem Skin;Novice;Skinning;5;1;Grem Carcass
-Animal Fat;Novice;Skinning;5;1;Bear Carcass
-Animal Fat;Novice;Skinning;5;1;Wolf Carcass
+RecipeId;RecipeName;Name;Level;Category;Output;Amount1;Material1
+animal-fat-grem;Animal Fat (Grem);Animal Fat;Novice;Skinning;5;1;Grem Carcass
+;Grem Skin;Grem Skin;Novice;Skinning;5;1;Grem Carcass
+animal-fat-bear;Animal Fat (Bear);Animal Fat;Novice;Skinning;5;1;Bear Carcass
+animal-fat-wolf;Animal Fat (Wolf);Animal Fat;Novice;Skinning;5;1;Wolf Carcass

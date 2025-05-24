@@ -462,14 +462,18 @@ function createRecipes(materials: Array<Material>) {
       (mat) =>
         typeof mat['material1'] == 'string' && typeof mat['amount1'] == 'string'
     )
+    .map((m) => {
+      m.key == 'animal-fat' && console.log(m)
+      return m
+    })
     .map((m) => ({
       allow_productivity: false,
       category: `${slug(m.level)}-${m.skill.key}`,
       energy_required: 1,
       ingredients: fillIngredients(m),
-      key: m.key,
+      key: m['recipeid'] ?? m.key, //TODO: normalize
       localized_name: {
-        en: m.name,
+        en: m['recipename'] ?? m.name,
       },
       order: 'a[items]-a[Western Larch Caravan Carriage]',
       results: [
@@ -566,6 +570,7 @@ async function loadData(modName, settings) {
   data.mining_drills = [...data.mining_drills, ...createMiningDrills()] //gathering
   data.recipes = [...data.recipes, ...createRecipes(materials)]
   data.resources = [...data.resources, ...createResources(materials)]
+
   let items = getItems(data)
   let recipes = getRecipes(data, items)
   let planets = getPlanets(data, recipes)
@@ -573,7 +578,6 @@ async function loadData(modName, settings) {
   let buildings = getBuildings(data, items)
   let belts = getBelts(data)
   let fuel = getFuel(data, items)
-  console.log(recipes)
   getSprites(data)
   let itemGroups = getItemGroups(items, data)
   spec.setData(
