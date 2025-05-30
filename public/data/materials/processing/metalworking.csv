@@ -1,20 +1,21 @@
 Name;Level;Category;Amount1;Material1;Amount2;Material2;Amount3;Material3
-Gold Ingot;Grandmaster;Ingot;1;Flux;1;Gold;;
-Rividium Ingot;Journeyman;Ingot;1;Flux;1;Rividium Fragments;;
-Silver Ingot;Master;Ingot;1;Flux;1;Silver;;
-Stellarium Ingot;Master;Ingot;1;Flux;1;Stellarium;;
-Tin Ingot;Apprentice;Ingot;1;Flux;1;Tin Fragments;;
-Copper Ingot;Novice;Ingot;1;Flux;1;Copper Fragments;;
-Zinc Ingot;Novice;Ingot;1;Flux;1;Zinc Fragments;;
+Gold Ingot;Grandmaster;Ingot;1;Flux;3;Gold;;
+Rividium Ingot;Journeyman;Ingot;1;Flux;2;Rividium Fragments;;
+Silver Ingot;Master;Ingot;1;Flux;3;Silver;;
+Stellarium Ingot;Master;Ingot;1;Flux;3;Stellarium;;
+Tin Ingot;Apprentice;Ingot;1;Flux;2;Tin Fragments;;
+Copper Ingot;Novice;Ingot;1;Flux;2;Copper Fragments;;
+Zinc Ingot;Novice;Ingot;1;Flux;2;Zinc Fragments;;
 Bronze Ingot;Apprentice;Ingot;1;Flux;1;Copper Fragments;2;Tin Fragments
 Brass Ingot;Apprentice;Ingot;1;Flux;2;Copper Fragments;1;Zinc Fragments
-Steel Ingot;Journeyman;Ingot;1;Flux;1;Iron Fragments;1;Coke
-Glittering Steel Ingot;Journeyman;Ingot;1;Flux;1;Glittering Metal Strand;1;Steel Ingot
-Iron Ingot;Journeyman;Ingot;1;Flux;1;Iron Fragments;;
+Steel Ingot;Journeyman;Ingot;1;Flux;2;Iron Fragments;1;Coke
+Glittering Steel Ingot;Journeyman;Ingot;1;Flux;1;Glittering Metal Strand;2;Steel Ingot
+Iron Ingot;Journeyman;Ingot;1;Flux;2;Iron Fragments;;
 Copper Fragments;Novice;Metal Fragments;1;Copper;;;;
 Zinc Fragments;Novice;Metal Fragments;1;Zinc;;;;
 Tin Fragments;Apprentice;Metal Fragments;1;Tin;;;;
-Iron Fragments;Journeyman;Metal Fragments;1;Iron;;;;
-Rividium Fragments;Journeyman;Metal Fragments;1;Rividium;;;;
-Coke;Journeyman;Fuel;1;Coal;;;;
-Charcoal;Apprentice;Fuel;3;Oak Wood;;;;
+Iron Fragments;Journeyman;Metal Fragments;2;Iron;;;;
+Rividium Fragments;Journeyman;Metal Fragments;2;Rividium;;;;
+Coke;Journeyman;Fuel;2;Coal;;;;
+Charcoal;Apprentice;Fuel;2;Oak Wood;;;;
+Colcothar;Novice;Powder;1;Copper;;;;

@@ -3,8 +3,8 @@ Ash Timber;Novice;Timber;1;Ash Wood
 Eastern Hemlock Timber;Novice;Timber;1;Eastern Hemlock Wood
 Oak Timber;Novice;Timber;1;Oak Wood
 Western Larch Timber;Novice;Timber;1;Western Larch Wood
-Weeping Willow Timber;Apprentice;Timber;1;Weeping Willow Wood
-Braidwood Timber;Journeyman;Timber;1;Braidwood Wood
+Weeping Willow Timber;Apprentice;Timber;2;Weeping Willow Wood
+Braidwood Timber;Journeyman;Timber;2;Braidwood Wood
 Ash Log;Apprentice;Timber;1;Ash Timber
 Eastern Hemlock Log;Apprentice;Timber;1;Eastern Hemlock Timber
 Oak Log;Apprentice;Timber;1;Oak Timber
@@ -49,8 +49,8 @@ Ash Board;Apprentice;Board;1;Ash Timber
 Eastern Hemlock Board;Apprentice;Board;1;Eastern Hemlock Timber
 Oak Board;Apprentice;Board;1;Oak Timber
 Western Larch Board;Apprentice;Board;1;Western Larch Timber
-Weeping Willow Board;Apprentice;Board;1;Weeping Willow Timber
-Braidwood Board;Journeyman;Board;1;Braidwood Timber
+Weeping Willow Board;Apprentice;Board;2;Weeping Willow Timber
+Braidwood Board;Journeyman;Board;2;Braidwood Timber
 Dried Ash Board;Journeyman;Board;;
 Dried Eastern Hemlock Board;Journeyman;Board;;
 Dried Oak Board;Journeyman;Board;;

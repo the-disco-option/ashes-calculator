@@ -1,52 +1,52 @@
 Name;Level;Category;Amount1;Material1;Amount2;Material2;Amount3;Material3;Amount4;Material4
 Granite Fragments;Novice;Stone Fragment;1;Granite;;;;;;
 Basalt Fragments;Novice;Stone Fragment;1;Basalt;;;;;;
-Slate Fragments;Apprentice;Stone Fragment;1;Slate;;;;;;
-Limestone Fragments;Journeyman;Stone Fragment;1;Limestone;;;;;;
-Wyrdstone Fragments;Journeyman;Stone Fragment;1;Wyrdstone;;;;;;
+Slate Fragments;Apprentice;Stone Fragment;2;Slate;;;;;;
+Limestone Fragments;Journeyman;Stone Fragment;2;Limestone;;;;;;
+Wyrdstone Fragments;Journeyman;Stone Fragment;2;Wyrdstone;;;;;;
 Granite Weapon Mold;Novice;Weapon Mold;1;Granite;;;;;;
 Basalt Weapon Mold;Novice;Weapon Mold;1;Basalt;;;;;;
-Slate Weapon Mold;Apprentice;Weapon Mold;1;Weeping Willow Board;1;Slate Mortar;1;Slate Clay;;
+Slate Weapon Mold;Apprentice;Weapon Mold;1;Weeping Willow Board;2;Slate Mortar;1;Slate Clay;;
 Limestone Weapon Mold;Journeyman;Weapon Mold;1;Braidwood Board;1;Limestone Mortar;1;Limestone Clay;;
-Wyrdstone Weapon Mold;Journeyman;Weapon Mold;1;Braidwood Board;1;Wyrdstone Mortar;1;Wyrdstone Clay;;
+Wyrdstone Weapon Mold;Journeyman;Weapon Mold;1;Braidwood Board;2;Wyrdstone Mortar;1;Wyrdstone Clay;;
 Granite Armor Mold;Novice;Armor Mold;1;Granite;;;;;;
 Basalt Armor Mold;Novice;Armor Mold;1;Basalt;;;;;;
-Slate Armor Mold;Apprentice;Armor Mold;1;Weeping Willow Board;1;Slate Mortar;1;Slate Clay;;
-Limestone Armor Mold;Journeyman;Armor Mold;1;Braidwood Board;1;Limestone Mortar;1;Limestone Clay;;
-Wyrdstone Armor Mold;Journeyman;Armor Mold;1;Braidwood Board;1;Wyrdstone Mortar;1;Wyrdstone Clay;;
+Slate Armor Mold;Apprentice;Armor Mold;1;Weeping Willow Board;2;Slate Mortar;1;Slate Clay;;
+Limestone Armor Mold;Journeyman;Armor Mold;1;Braidwood Board;2;Limestone Mortar;1;Limestone Clay;;
+Wyrdstone Armor Mold;Journeyman;Armor Mold;1;Braidwood Board;2;Wyrdstone Mortar;1;Wyrdstone Clay;;
 Slate Armor Mold;Apprentice;Armor Mold;1;Weeping Willow Board;1;Slate Mortar;1;Slate Clay;;
 Limestone Armor Mold;Journeyman;Armor Mold;1;Braidwood Board;1;Limestone Mortar;1;Limestone Clay;;
 Wyrdstone Armor Mold;Journeyman;Armor Mold;1;Braidwood Board;1;Wyrdstone Mortar;1;Wyrdstone Clay;;
 Granite Sand;Novice;Sand;1;Granite;;;;;;
 Basalt Sand;Novice;Sand;1;Basalt;;;;;;
-Slate Sand;Apprentice;Sand;1;Slate;;;;;;
-Limestone Sand;Journeyman;Sand;1;Limestone;;;;;;
-Wyrdstone Sand;Journeyman;Sand;1;Wyrdstone;;;;;;
-Granite Brick;Novice;Brick;1;Water;1;Granite Clay;;;;
-Basalt Brick;Novice;Brick;1;Water;1;Basalt Clay;;;;
-Slate Brick;Apprentice;Brick;1;Water;1;Slate Clay;;;;
-Limestone Brick;Journeyman;Brick;1;Water;1;Limestone Clay;;;;
-Wyrdstone Brick;Journeyman;Brick;1;Water;1;Wyrdstone Clay;;;;
+Slate Sand;Apprentice;Sand;2;Slate;;;;;;
+Limestone Sand;Journeyman;Sand;2;Limestone;;;;;;
+Wyrdstone Sand;Journeyman;Sand;2;Wyrdstone;;;;;;
+Granite Brick;Novice;Brick;2;Water;1;Granite Clay;;;;
+Basalt Brick;Novice;Brick;2;Water;1;Basalt Clay;;;;
+Slate Brick;Apprentice;Brick;2;Water;1;Slate Clay;;;;
+Limestone Brick;Journeyman;Brick;2;Water;1;Limestone Clay;;;;
+Wyrdstone Brick;Journeyman;Brick;2;Water;1;Wyrdstone Clay;;;;
 Granite Clay;Novice;Clay;1;Water;1;Granite Fragments;1;Animal Fat;;
 Basalt Clay;Novice;Clay;1;Water;1;Basalt Fragments;1;Animal Fat;;
-Slate Clay;Apprentice;Clay;1;Water;1;Slate Fragments;1;Animal Fat;;
-Limestone Clay;Journeyman;Clay;1;Water;1;Limestone Fragments;1;Animal Fat;;
-Wyrdstone Clay;Journeyman;Clay;1;Water;1;Wyrdstone Fragments;1;Animal Fat;;
+Slate Clay;Apprentice;Clay;1;Water;2;Slate Fragments;1;Animal Fat;;
+Limestone Clay;Journeyman;Clay;1;Water;2;Limestone Fragments;1;Animal Fat;;
+Wyrdstone Clay;Journeyman;Clay;1;Water;2;Wyrdstone Fragments;1;Animal Fat;;
 Granite Mortar;Novice;Mortar;1;Water;1;Granite Sand;1;Daffodil Thread;1;Granite Fragments
 Basalt Mortar;Novice;Mortar;1;Water;1;Basalt Sand;1;Daffodil Thread;1;Basalt Fragments
-Slate Mortar;Apprentice;Mortar;1;Water;1;Slate Sand;1;Bluebell Thread;1;Slate Fragments
-Limestone Mortar;Journeyman;Mortar;1;Water;1;Wyrdstone Sand;1;Spindlehemp Thread;1;Wyrdstone Fragments
-Wyrdstone Mortar;Journeyman;Mortar;1;Water;1;Wyrdstone Sand;1;Spindlehemp Thread;1;Wyrdstone Fragments
+Slate Mortar;Apprentice;Mortar;1;Water;2;Slate Sand;1;Bluebell Thread;1;Slate Fragments
+Limestone Mortar;Journeyman;Mortar;1;Water;2;Limestone Sand;1;Spindlehemp Thread;2;Limestone Fragments
+Wyrdstone Mortar;Journeyman;Mortar;1;Water;1;Wyrdstone Sand;1;Spindlehemp Thread;2;Wyrdstone Fragments
 Granite Ashlar Block;Novice;Ashlar Block;1;Granite;;;;;;
 Basalt Ashlar Block;Novice;Ashlar Block;1;Basalt;;;;;;
-Slate Ashlar Block;Apprentice;Ashlar Block;1;Slate;;;;;;
-Limestone Ashlar Block;Journeyman;Ashlar Block;1;Limestone;;;;;;
-Wyrdstone Ashlar Block;Journeyman;Ashlar Block;1;Wyrdstone;;;;;;
+Slate Ashlar Block;Apprentice;Ashlar Block;2;Slate;;;;;;
+Limestone Ashlar Block;Journeyman;Ashlar Block;2;Limestone;;;;;;
+Wyrdstone Ashlar Block;Journeyman;Ashlar Block;2;Wyrdstone;;;;;;
 Cut Ruby;Novice;Cut Gem;1;Ruby;;;;;;
-Cut Halcyonite;Apprentice;Cut Gem;1;Halcyonite;;;;;;
-Cut Emerald;Apprentice;Cut Gem;1;Emerald;;;;;;
-Cut Sapphire;Journeyman;Cut Gem;1;Sapphire;;;;;;
-Cut Lumadon;Journeyman;Cut Gem;1;Lumadon;;;;;;
+Cut Halcyonite;Apprentice;Cut Gem;2;Halcyonite;;;;;;
+Cut Emerald;Apprentice;Cut Gem;2;Emerald;;;;;;
+Cut Sapphire;Journeyman;Cut Gem;2;Sapphire;;;;;;
+Cut Lumadon;Journeyman;Cut Gem;2;Lumadon;;;;;;
 Polished Ruby;Journeyman;Polished Gem;1;Cut Ruby;;;;;;
 Polished Halcyonite;Journeyman;Polished Gem;1;Cut Halcyonite;;;;;;
 Polished Emerald;Journeyman;Polished Gem;1;Cut Emerald;;;;;;

@@ -5,17 +5,17 @@ Oak Wood;Apprentice;Plaiting;1;Oak Wrap;;
 Western Larch Wood;Apprentice;Plaiting;1;Western Larch Wrap;;
 Weeping Willow Wood;Apprentice;Plaiting;1;Weeping Willow Wrap;;
 Braidwood Wood;Journeyman;Plaiting;1;Braidwood Wrap;;
-Silk Thread;Apprentice;Thread;1;Silkworm Cocoon;;
-Spider Silk Thread;Apprentice;Thread;1;Spider Cocoon;;
+Silk Thread;Apprentice;Thread;2;Silkworm Cocoon;;
+Spider Silk Thread;Apprentice;Thread;2;Spider Cocoon;;
 Linen Thread;Novice;Thread;1;Flax;;
-Wool Thread;Journeyman;Thread;1;Wool;;
+Wool Thread;Journeyman;Thread;2;Wool;;
 Cotton Thread;Novice;Thread;1;Cotton;;
-Bluebell Thread;Apprentice;Thread;1;Giant Bluebell;;
-Moon Thread;Apprentice;Thread;1;Moonbell;;
-Spindlehemp Thread;Journeyman;Thread;1;Spindlevine;;
-Gloom Thread;Journeyman;Thread;1;Gloomy Pross Petals;;
-Grave Thread;Journeyman;Thread;1;Grave Lily;;
-Bloodboiled Thread;Journeyman;Thread;1;Blood-Boiled Spiritbloom;;
+Bluebell Thread;Apprentice;Thread;2;Giant Bluebell;;
+Moon Thread;Apprentice;Thread;2;Moonbell;;
+Spindlehemp Thread;Journeyman;Thread;2;Spindlevine;;
+Gloom Thread;Journeyman;Thread;2;Gloomy Pross Petals;;
+Grave Thread;Journeyman;Thread;2;Grave Lily;;
+Bloodboiled Thread;Journeyman;Thread;2;Blood-Boiled Spiritbloom;;
 Silk Thread;Apprentice;Bolt;1;Silk Thread;1;Weeping Willow Board
 Spider Silk Thread;Apprentice;Bolt;1;Spider Sil Thread;1;Weeping Willow Board
 Linen Thread;Apprentice;Bolt;1;Linen Thread;1;Weeping Willow Board
@@ -34,8 +34,8 @@ Ash Warp;Apprentice;Warp;1;Wood Oil;1;Ash Wood
 Eastern Hemlock Warp;Apprentice;Warp;1;Wood Oil;1;Eastern Hemlock Wood
 Oak Warp;Apprentice;Warp;1;Wood Oil;1;Oak Wood
 Western Larch Warp;Apprentice;Warp;1;Wood Oil;1;Western Larch Wood
-Weeping Willow Warp;Apprentice;Warp;1;Wood Oil;1;Weeping Willow Wood
-Braidwood Warp;Journeyman;Warp;1;Wood Oil;1;Braidwood Wood
+Weeping Willow Warp;Apprentice;Warp;1;Wood Oil;2;Weeping Willow Wood
+Braidwood Warp;Journeyman;Warp;1;Wood Oil;2;Braidwood Wood
 Snowdrop Thread;Novice;Fiber;1;Snowdrop;;
 Daffodill Thread;Novice;Fiber;1;Daffodill;;
 Spider Silk Lace;Journeyman;Lace;1;Spider Silk Bolt;;
