@@ -287,6 +287,18 @@ const RecipeSchema = z
     key: z.string().optional(),
     name: z.string(),
     level: z.string().optional(),
+    category: z.string().optional(),
+    material1: z.string().optional(),
+    material2: z.string().optional(),
+    material3: z.string().optional(),
+    material4: z.string().optional(),
+    material5: z.string().optional(),
+    amount1: z.string().optional(),
+    amount2: z.string().optional(),
+    amount3: z.string().optional(),
+    amount4: z.string().optional(),
+    amount5: z.string().optional(),
+    output: z.string().optional(),
   })
   .transform((r) => ({ ...r, key: `recipe-${r.key ?? slug(r.name)}` as const }))
 
@@ -306,12 +318,7 @@ async function loadMaterials() {
   return data.flat()
 }
 
-/**
- *
- * @param {Array<unknown>} materials
- * @returns {Array<Material>}
- */
-function createItems(materials) {
+function createItems(materials: Recipe[]) {
   return materials.map((d) => ({
     key: d.key,
     localized_name: { en: d.name },
