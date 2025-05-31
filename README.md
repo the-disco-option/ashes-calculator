@@ -25,6 +25,7 @@ This tool is build on upon the foundations of the Factorio Calculator. Please co
 - [ ] handle items(consumable, equipable)
 - [ ] support mob spawns and multiple sources better.
 - [ ] Add "What is this item used for?"
+- [ ] items will not be added unless their ingredients exist, and fails silently
 
 think up some interfaces
 interface Item {
@@ -77,6 +78,7 @@ interface Vendor {
 }
 
 ## Phase 2.5 recipes
+
 
 ### Crafting
 
