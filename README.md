@@ -75,3 +75,36 @@ interface Armor {
 interface Vendor {
     location ?
 }
+
+## Phase 2.5 recipes
+
+### Crafting
+
+- [ ] Leatherworking
+- [ ] Armor Smithing
+- [ ] Tailoring
+- [ ] Arcane Engineering
+- [ ] Jeweler
+- [ ] Scribe
+- [ ] Weapon Smithing
+- [ ] Carpentry
+
+### Gathering
+
+- [ ] Mining
+- [ ] Lumberjacking
+- [ ] Fishing
+- [ ] Herbalism
+- [ ] Hunting
+
+### Processing
+
+- [ ] Metalworking
+- [ ] Weaving
+- [ ] Stonemasonry
+- [ ] Tanning
+- [ ] Lumber Milling
+- [ ] Farming
+- [ ] Animal Husbandry
+- [ ] Alchemy
+- [ ] Cooking
