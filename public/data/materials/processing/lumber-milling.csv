@@ -1,77 +1,169 @@
-Name;Level;Category;Amount1;Material1
-Ash Timber;Novice;Timber;1;Ash Wood
-Eastern Hemlock Timber;Novice;Timber;1;Eastern Hemlock Wood
-Oak Timber;Novice;Timber;1;Oak Wood
-Western Larch Timber;Novice;Timber;1;Western Larch Wood
-Weeping Willow Timber;Apprentice;Timber;2;Weeping Willow Wood
-Braidwood Timber;Journeyman;Timber;2;Braidwood Wood
-Ash Log;Apprentice;Timber;1;Ash Timber
-Eastern Hemlock Log;Apprentice;Timber;1;Eastern Hemlock Timber
-Oak Log;Apprentice;Timber;1;Oak Timber
-Western Larch Log;Apprentice;Timber;1;Western Larch Timber
-Weeping Willow Log;Apprentice;Timber;1;Weeping Willow Timber
-Braidwood Log;Journeyman;Timber;1;Braidwood Timber
-Corrupted Ash Log;Journeyman;Timber;;
-Corrupted Eastern Hemlock Log;Journeyman;Timber;;
-Corrupted Oak Log;Journeyman;Timber;;
-Corrupted Western Larch Log;Journeyman;Timber;;
-Dried Ash Log;Journeyman;Timber;;
-Dried Eastern Hemlock Log;Journeyman;Timber;;
-Dried Oak Log;Journeyman;Timber;;
-Dried Western Larch Log;Journeyman;Timber;;
-Dried Weeping Willow Log;Journeyman;Timber;;
-Dried Braidwood Log;Journeyman;Timber;;
-Ash Beam;Apprentice;Beam;1;Ash Timber
-Eastern Hemlock Beam;Apprentice;Beam;1;Eastern Hemlock Timber
-Oak Beam;Apprentice;Beam;1;Oak Timber
-Western Larch Beam;Apprentice;Beam;1;Western Larch Timber
-Weeping Willow Beam;Apprentice;Beam;1;Weeping Willow Timber
-Braidwood Beam;Journeyman;Beam;1;Braidwood Timber
-Dried Ash Beam;Journeyman;Beam;;
-Dried Eastern Hemlock Beam;Journeyman;Beam;;
-Dried Oak Beam;Journeyman;Beam;;
-Dried Western Larch Beam;Journeyman;Beam;;
-Dried Weeping Willow Beam;Journeyman;Beam;;
-Dried Braidwood Beam;Journeyman;Beam;;
-Ash Plank;Apprentice;Plank;1;Ash Timber
-Eastern Hemlock Plank;Apprentice;Plank;1;Eastern Hemlock Timber
-Oak Plank;Apprentice;Plank;1;Oak Timber
-Western Larch Plank;Apprentice;Plank;1;Western Larch Timber
-Weeping Willow Plank;Apprentice;Plank;1;Weeping Willow Timber
-Braidwood Plank;Journeyman;Plank;1;Braidwood Timber
-Dried Ash Plank;Journeyman;Plank;;
-Dried Eastern Hemlock Plank;Journeyman;Plank;;
-Dried Oak Plank;Journeyman;Plank;;
-Dried Western Larch Plank;Journeyman;Plank;;
-Dried Weeping Willow Plank;Journeyman;Plank;;
-Dried Braidwood Plank;Journeyman;Plank;;
-Ash Board;Apprentice;Board;1;Ash Timber
-Eastern Hemlock Board;Apprentice;Board;1;Eastern Hemlock Timber
-Oak Board;Apprentice;Board;1;Oak Timber
-Western Larch Board;Apprentice;Board;1;Western Larch Timber
-Weeping Willow Board;Apprentice;Board;2;Weeping Willow Timber
-Braidwood Board;Journeyman;Board;2;Braidwood Timber
-Dried Ash Board;Journeyman;Board;;
-Dried Eastern Hemlock Board;Journeyman;Board;;
-Dried Oak Board;Journeyman;Board;;
-Dried Western Larch Board;Journeyman;Board;;
-Dried Weeping Willow Board;Journeyman;Board;;
-Dried Braidwood Board;Journeyman;Board;;
-Ash Saw Dust;Apprentice;Sawdust;;
-Eastern Hemlock Saw Dust;Apprentice;Sawdust;;
-Oak Saw Dust;Apprentice;Sawdust;;
-Western Larch Saw Dust;Apprentice;Sawdust;;
-Weeping Willow Saw Dust;Apprentice;Sawdust;;
-Braidwood Saw Dust;Journeyman;Sawdust;;
-Ash Woodchips;Apprentice;Wood Chips;;
-Eastern Hemlock Woodchips;Apprentice;Wood Chips;;
-Oak Woodchips;Apprentice;Wood Chips;;
-Western Larch Woodchips;Apprentice;Wood Chips;;
-Weeping Willow Woodchips;Apprentice;Wood Chips;;
-Braidwood Woodchips;Journeyman;Wood Chips;;
-Ash Paper;Journeyman;Paper;;
-Eastern Hemlock Paper;Journeyman;Paper;;
-Oak Paper;Journeyman;Paper;;
-Western Larch Paper;Journeyman;Paper;;
-Weeping Willow Paper;Journeyman;Paper;;
-Braidwood Paper;Journeyman;Paper;;
+Name;Level;Category;Amount1;Material1;Amount2;Material2;Amount3;Material3;Amount4;Material4
+#Timber
+Oak Timber;Novice;Timber;1;Oak Wood;;;;;;
+Corrupted Ash Log;Journeyman;Timber;2;Currupted Ash Wood;;;;;;
+Corrupted Eastern Hemlock Log;Journeyman;Timber;2;Currupted Eastern Hemlock Wood;;;;;;
+Corrupted Oak Log;Journeyman;Timber;2;Currupted Oak Wood;;;;;;
+Corrupted Western Larch Log;Journeyman;Timber;2;Currupted Western Larch Wood;;;;;;
+Ash Timber;Novice;Timber;1;Ash Wood;;;;;;
+Eastern Hemlock Timber;Novice;Timber;1;Eastern Hemlock Wood;;;;;;
+Western Larch Timber;Novice;Timber;1;Western Larch Wood;;;;;;
+Weeping Willow Timber;Apprentice;Timber;2;Weeping Willow Wood;;;;;;
+Braidwood Timber;Journeyman;Timber;2;Braidwood Wood;;;;;;
+Acacia Timber;Novice;Timber;1;Acacia Wood;;;;;;
+Coconut Timber;Novice;Timber;1;Coconut Wood;;;;;;
+Plumeria Timber;Novice;Timber;1;Plumeria Wood;;;;;;
+Dragon Tree Timber;Apprentice;Timber;2;Dragon Tree Wood;;;;;;
+Date Palm Timber;Novice;Timber;1;Date Palm Wood;;;;;;
+Joshua Tree Timber;Journeyman;Timber;2;Joshua Tree Wood;;;;;;
+Banyan Timber;Novice;Timber;2;Banyan Wood;;;;;;
+#Wood Chips
+Oak Woodchips;Novice;Wood Chips;1;Oak Wood;;;;;;
+Ash Woodchips;Novice;Wood Chips;1;Ash Wood;;;;;;
+Eastern Hemlock Woodchips;Novice;Wood Chips;1;Eastern Hemlock Wood;;;;;;
+Western Larch Woodchips;Novice;Wood Chips;1;Western Larch Wood;;;;;;
+Weeping Willow Woodchips;Apprentice;Wood Chips;2;Weeping Willow Wood;;;;;;
+Braidwood Woodchips;Journeyman;Wood Chips;2;Braidwood Wood;;;;;;
+Banyan Woodchips;Novice;Wood Chips;1;Banyan Wood;;;;;;
+Coconut Palm Woodchips;Novice;Wood Chips;1;Coconut Wood;;;;;;
+Plumeria Woodchips;Novice;Wood Chips;1;Plumeria Wood;;;;;;
+Acacia Woodchips;Novice;Wood Chips;1;Acacia Wood;;;;;;
+Dragon Tree Woodchips;Apprentice;Wood Chips;2;Dragon Tree Wood;;;;;;
+Joshua Tree Woodchips;Journeyman;Wood Chips;2;Joshua Tree Wood;;;;;;
+Date Palm Woodchips;Novice;Wood Chips;1;Date Palm Wood;;;;;;
+#Log
+Oak Log;Apprentice;Log;2;Oak Timber;;;;;;
+Ash Log;Apprentice;Log;2;Ash Timber;;;;;;
+Eastern Hemlock Log;Apprentice;Log;2;Eastern Hemlock Timber;;;;;;
+Western Larch Log;Apprentice;Log;2;Western Larch Timber;;;;;;
+Braidwood Log;Journeyman;Log;2;Braidwood Timber;;;;;;
+Dried Ash Log;Journeyman;Log;1;Bee's Wax;2;Ash Log;;;;
+Dried Eastern Hemlock Log;Journeyman;Log;1;Bee's Wax;2;Eastern Hemlock Log;;;;
+Dried Oak Log;Journeyman;Log;1;Bee's Wax;2;Oak Log;;;;
+Dried Western Larch Log;Journeyman;Log;1;Bee's Wax;2;Western Larch Log;;;;
+Dried Weeping Willow Log;Journeyman;Log;1;Bee's Wax;2;Weeping Willow Log;;;;
+Dried Braidwood Log;Journeyman;Log;1;Bee's Wax;2;Braidwood Log;;;;
+Weeping Willow Log;Apprentice;Log;2;Weeping Willow Timber;;;;;;
+Dried Dragon Tree Log;Journeyman;Log;1;Bee's Wax;2;Dragon Tree Log;;;;
+Acacia Log;Apprentice;Log;2;Acacia Timber;;;;;;
+Dried Acacia Log;Journeyman;Log;1;Bee's Wax;2;Acacia Log;;;;
+Dried Joshua Tree Log;Journeyman;Log;1;Bee's Wax;2;Joshua Tree Log;;;;
+Dried Banyan Log;Journeyman;Log;1;Bee's Wax;2;Banyan Log;;;;
+Coconut Log;Apprentice;Log;2;Coconut Timber;;;;;;
+Plumeria Log;Apprentice;Log;2;Plumeria Timber;;;;;;
+Dragon Tree Log;Apprentice;Log;2;Dragon Tree Timber;;;;;;
+Joshua Tree Log;Journeyman;Log;2;Joshua Tree Timber;;;;;;
+Banyan Log;Apprentice;Log;2;Banyan Timber;;;;;;
+Date Palm Log;Apprentice;Log;2;Date Palm Timber;;;;;;
+Dried Date Palm Log;Journeyman;Log;1;Bee's Wax;2;Date Palm Log;;;;
+Dried Coconut Log;Journeyman;Log;1;Bee's Wax;2;Coconut Log;;;;
+Dried Plumeria Log;Journeyman;Log;1;Bee's Wax;2;Plumeria Log;;;;
+#Beam
+Oak Beam;Apprentice;Beam;2;Oak Timber;;;;;;
+Ash Beam;Apprentice;Beam;2;Ash Timber;;;;;;
+Eastern Hemlock Beam;Apprentice;Beam;2;Eastern Hemlock Timber;;;;;;
+Western Larch Beam;Apprentice;Beam;2;Western Larch Timber;;;;;;
+Weeping Willow Beam;Apprentice;Beam;2;Weeping Willow Timber;;;;;;
+Acacia Beam;Apprentice;Beam;2;Acacia Timber;;;;;;
+Braidwood Beam;Journeyman;Beam;2;Braidwood Timber;;;;;;
+Coconut Beam;Apprentice;Beam;2;Coconut Timber;;;;;;
+Dragon Tree Beam;Apprentice;Beam;2;Dragon Tree Timber;;;;;;
+Joshua Tree Beam;Journeyman;Beam;2;Joshua Tree Timber;;;;;;
+Banyan Beam;Apprentice;Beam;2;Banyan Timber;;;;;;
+Plumeria Beam;Apprentice;Beam;2;Plumeria Timber;;;;;;
+Date Palm Beam;Apprentice;Beam;2;Date Palm Timber;;;;;;
+Dried Ash Beam;Journeyman;Beam;1;Bee's Wax;2;Ash Beam;;;;
+Dried Eastern Hemlock Beam;Journeyman;Beam;1;Bee's Wax;2;Eastern Hemlock Beam;;;;
+Dried Oak Beam;Journeyman;Beam;1;Bee's Wax;2;Oak Beam;;;;
+Dried Western Larch Beam;Journeyman;Beam;1;Bee's Wax;2;Western Larch Beam;;;;
+Dried Weeping Willow Beam;Journeyman;Beam;1;Bee's Wax;2;Weeping Willow Beam;;;;
+Dried Braidwood Beam;Journeyman;Beam;1;Bee's Wax;2;Braidwood Beam;;;;
+Dried Dragon Tree Beam;Journeyman;Beam;1;Bee's Wax;2;Dragon Tree Beam;;;;
+Dried Acacia Beam;Journeyman;Beam;1;Bee's Wax;2;Acacia Beam;;;;
+Dried Joshua Tree Beam;Journeyman;Beam;1;Bee's Wax;2;Joshua Tree Beam;;;;
+Dried Banyan Beam;Journeyman;Beam;1;Bee's Wax;2;Banyan Beam;;;;
+Dried Date Palm Beam;Journeyman;Beam;1;Bee's Wax;2;Date Palm Beam;;;;
+Dried Coconut Beam;Journeyman;Beam;1;Bee's Wax;2;Coconut Beam;;;;
+Dried Plumeria Beam;Journeyman;Beam;1;Bee's Wax;2;Plumeria Beam;;;;
+#Plank
+Oak Plank;Apprentice;Plank;2;Oak Timber;;;;;;
+Ash Plank;Apprentice;Plank;2;Ash Timber;;;;;;
+Eastern Hemlock Plank;Apprentice;Plank;2;Eastern Hemlock Timber;;;;;;
+Western Larch Plank;Apprentice;Plank;2;Western Larch Timber;;;;;;
+Weeping Willow Plank;Apprentice;Plank;2;Weeping Willow Timber;;;;;;
+Acacia Plank;Apprentice;Plank;2;Acacia Timber;;;;;;
+Braidwood Plank;Journeyman;Plank;2;Braidwood Timber;;;;;;
+Coconut Plank;Apprentice;Plank;2;Coconut Timber;;;;;;
+Dragon Tree Plank;Apprentice;Plank;2;Dragon Tree Timber;;;;;;
+Joshua Tree Plank;Journeyman;Plank;2;Joshua Tree Timber;;;;;;
+Banyan Plank;Apprentice;Plank;2;Banyan Timber;;;;;;
+Plumeria Plank;Apprentice;Plank;2;Plumeria Timber;;;;;;
+Date Palm Plank;Apprentice;Plank;2;Date Palm Timber;;;;;;
+Dried Ash Plank;Journeyman;Plank;1;Bee's Wax;2;Ash Plank;;;;
+Dried Eastern Hemlock Plank;Journeyman;Plank;1;Bee's Wax;2;Eastern Hemlock Plank;;;;
+Dried Oak Plank;Journeyman;Plank;1;Bee's Wax;2;Oak Plank;;;;
+Dried Western Larch Plank;Journeyman;Plank;1;Bee's Wax;2;Western Larch Plank;;;;
+Dried Weeping Willow Plank;Journeyman;Plank;1;Bee's Wax;2;Weeping Willow Plank;;;;
+Dried Braidwood Plank;Journeyman;Plank;1;Bee's Wax;2;Braidwood Plank;;;;
+Dried Dragon Tree Plank;Journeyman;Plank;1;Bee's Wax;2;Dragon Tree Plank;;;;
+Dried Acacia Plank;Journeyman;Plank;1;Bee's Wax;2;Acacia Plank;;;;
+Dried Joshua Tree Plank;Journeyman;Plank;1;Bee's Wax;2;Joshua Tree Plank;;;;
+Dried Banyan Plank;Journeyman;Plank;1;Bee's Wax;2;Banyan Plank;;;;
+Dried Date Palm Plank;Journeyman;Plank;1;Bee's Wax;2;Date Palm Plank;;;;
+Dried Coconut Plank;Journeyman;Plank;1;Bee's Wax;2;Coconut Plank;;;;
+Dried Plumeria Plank;Journeyman;Plank;1;Bee's Wax;2;Plumeria Plank;;;;
+#Board
+Oak Board;Apprentice;Board;2;Oak Timber;;;;;;
+Ash Board;Apprentice;Board;2;Ash Timber;;;;;;
+Eastern Hemlock Board;Apprentice;Board;2;Eastern Hemlock Timber;;;;;;
+Western Larch Board;Apprentice;Board;2;Western Larch Timber;;;;;;
+Weeping Willow Board;Apprentice;Board;2;Weeping Willow Timber;;;;;;
+Acacia Board;Apprentice;Board;2;Acacia Timber;;;;;;
+Braidwood Board;Journeyman;Board;2;Braidwood Timber;;;;;;
+Coconut Board;Apprentice;Board;2;Coconut Timber;;;;;;
+Dragon Tree Board;Apprentice;Board;2;Dragon Tree Timber;;;;;;
+Joshua Tree Board;Journeyman;Board;2;Joshua Tree Timber;;;;;;
+Banyan Board;Apprentice;Board;2;Banyan Timber;;;;;;
+Plumeria Board;Apprentice;Board;2;Plumeria Timber;;;;;;
+Date Palm Board;Apprentice;Board;2;Date Palm Timber;;;;;;
+Dried Ash Board;Journeyman;Board;1;Bee's Wax;2;Ash Board;;;;
+Dried Eastern Hemlock Board;Journeyman;Board;1;Bee's Wax;2;Eastern Hemlock Board;;;;
+Dried Oak Board;Journeyman;Board;1;Bee's Wax;2;Oak Board;;;;
+Dried Western Larch Board;Journeyman;Board;1;Bee's Wax;2;Western Larch Board;;;;
+Dried Weeping Willow Board;Journeyman;Board;1;Bee's Wax;2;Weeping Willow Board;;;;
+Dried Braidwood Board;Journeyman;Board;1;Bee's Wax;2;Braidwood Board;;;;
+Dried Dragon Tree Board;Journeyman;Board;1;Bee's Wax;2;Dragon Tree Board;;;;
+Dried Acacia Board;Journeyman;Board;1;Bee's Wax;2;Acacia Board;;;;
+Dried Joshua Tree Board;Journeyman;Board;1;Bee's Wax;2;Joshua Tree Board;;;;
+Dried Banyan Board;Journeyman;Board;1;Bee's Wax;2;Banyan Board;;;;
+Dried Date Palm Board;Journeyman;Board;1;Bee's Wax;2;Date Palm Board;;;;
+Dried Coconut Board;Journeyman;Board;1;Bee's Wax;2;Coconut Board;;;;
+Dried Plumeria Board;Journeyman;Board;1;Bee's Wax;2;Plumeria Board;;;;
+#Sawdust
+Oak Saw Dust;Apprentice;Sawdust;2;Oak Timber;;;;;;
+Ash Saw Dust;Apprentice;Sawdust;2;Ash Timber;;;;;;
+Eastern Hemlock Saw Dust;Apprentice;Sawdust;2;Eastern Hemlock Timber;;;;;;
+Western Larch Saw Dust;Apprentice;Sawdust;2;Western Larch Timber;;;;;;
+Weeping Willow Saw Dust;Apprentice;Sawdust;2;Weeping Willow Timber;;;;;;
+Acacia Saw Dust;Apprentice;Sawdust;2;Acacia Timber;;;;;;
+Braidwood Saw Dust;Journeyman;Sawdust;2;Braidwood Timber;;;;;;
+Coconut Saw Dust;Apprentice;Sawdust;2;Coconut Timber;;;;;;
+Dragon Tree Saw Dust;Apprentice;Sawdust;2;Dragon Tree Timber;;;;;;
+Joshua Tree Saw Dust;Journeyman;Sawdust;2;Joshua Tree Timber;;;;;;
+Banyan Saw Dust;Apprentice;Sawdust;2;Banyan Timber;;;;;;
+Plumeria Saw Dust;Apprentice;Sawdust;2;Plumeria Timber;;;;;;
+Date Palm Saw Dust;Apprentice;Sawdust;2;Date Palm Timber;;;;;;
+#Paper
+Oak Paper;Apprentice;Sawdust;1;Water;2;Oak Saw Dust;1;Sodium Carbonate;1;Oak Woodchips
+Ash Paper;Apprentice;Sawdust;1;Water;2;Ash Saw Dust;1;Sodium Carbonate;1;Ash Woodchips
+Eastern Hemlock Paper;Apprentice;Sawdust;1;Water;2;Eastern Hemlock Saw Dust;1;Sodium Carbonate;1;Eastern Hemlock Woodchips
+Western Larch Paper;Apprentice;Sawdust;1;Water;2;Western Larch Saw Dust;1;Sodium Carbonate;1;Western Larch Woodchips
+Weeping Willow Paper;Apprentice;Sawdust;1;Water;2;Weeping Willow Saw Dust;1;Sodium Carbonate;1;Weeping Willow Woodchips
+Acacia Paper;Apprentice;Sawdust1;Water;;2;Acacia Saw Dust;1;Sodium Carbonate;1;Acacia Woodchips
+Braidwood Paper;Journeyman;Sawdust;1;Water;2;Braidwood Saw Dust;1;Sodium Carbonate;1;Braidwood Woodchips
+Coconut Paper;Apprentice;Sawdust;1;Water;2;Coconut Saw Dust;1;Sodium Carbonate;1;Coconut Woodchips
+Dragon Tree Paper;Apprentice;Sawdust;1;Water;2;Dragon Tree Saw Dust;1;Sodium Carbonate;1;Dragon Tree Woodchips
+Joshua Tree Paper;Journeyman;Sawdust;1;Water;2;Joshua Tree Saw Dust;1;Sodium Carbonate;1;Joshua Tree Woodchips
+Banyan Paper;Apprentice;Sawdust;1;Water;2;Banyan Saw Dust;1;Sodium Carbonate;1;Banyan Woodchips
+Plumeria Paper;Apprentice;Sawdust;1;Water;2;Plumeria Saw Dust;1;Sodium Carbonate;1;Plumeria Woodchips
+Date Palm Paper;Apprentice;Sawdust;1;Water;2;Date Palm Saw Dust;1;Sodium Carbonate;1;Date Palm Woodchips
