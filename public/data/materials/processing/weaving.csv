@@ -1,41 +1,64 @@
-Name;Level;Category;Amount1;Material1;;
-Ash Wood;Apprentice;Plaiting;1;Ash Wrap;;
-Eastern Hemlock Wood;Apprentice;Plaiting;1;Eastern Hemlock Wrap;;
-Oak Wood;Apprentice;Plaiting;1;Oak Wrap;;
-Western Larch Wood;Apprentice;Plaiting;1;Western Larch Wrap;;
-Weeping Willow Wood;Apprentice;Plaiting;1;Weeping Willow Wrap;;
-Braidwood Wood;Journeyman;Plaiting;1;Braidwood Wrap;;
+Name;Level;Category;Amount1;Material1;Amount2;Material2
+#Tassel
+Linen Tassel;Journeyman;Tassel;1;Linen Thread;;
+#Warp
+Oak Warp;Novice;Warp;1;Wood Oil;1;Oak Wood
+Ash Warp;Novice;Warp;1;Wood Oil;1;Ash Wood
+Eastern Hemlock Warp;Novice;Warp;1;Wood Oil;1;Eastern Hemlock Wood
+Western Larch Warp;Novice;Warp;1;Wood Oil;1;Western Larch Wood
+Weeping Willow Warp;Apprentice;Warp;1;Wood Oil;2;Weeping Willow Wood
+Braidwood Warp;Journeyman;Warp;1;Wood Oil;2;Braidwood Wood
+Date Palm Warp;Novice;Warp;1;Wood Oil;1;Date Palm Wood
+Dragon Tree Warp;Apprentice;Warp;1;Wood Oil;2;Dragon Tree Wood
+Acacia Warp;Novice;Warp;1;Wood Oil;1;Acacia Wood
+Coconut Warp;Novice;Warp;1;Wood Oil;1;Coconut Wood
+Plumeria Warp;Novice;Warp;1;Wood Oil;1;Plumeria Wood
+#Thread
+Wool Thread;Journeyman;Thread;2;Wool;;
+Cotton Thread;Novice;Thread;1;Cotton;;
 Silk Thread;Apprentice;Thread;2;Silkworm Cocoon;;
 Spider Silk Thread;Apprentice;Thread;2;Spider Cocoon;;
 Linen Thread;Novice;Thread;1;Flax;;
-Wool Thread;Journeyman;Thread;2;Wool;;
-Cotton Thread;Novice;Thread;1;Cotton;;
-Bluebell Thread;Apprentice;Thread;2;Giant Bluebell;;
-Moon Thread;Apprentice;Thread;2;Moonbell;;
 Spindlehemp Thread;Journeyman;Thread;2;Spindlevine;;
 Gloom Thread;Journeyman;Thread;2;Gloomy Pross Petals;;
 Grave Thread;Journeyman;Thread;2;Grave Lily;;
 Bloodboiled Thread;Journeyman;Thread;2;Blood-Boiled Spiritbloom;;
-Silk Thread;Apprentice;Bolt;1;Silk Thread;1;Weeping Willow Board
-Spider Silk Thread;Apprentice;Bolt;1;Spider Sil Thread;1;Weeping Willow Board
-Linen Thread;Apprentice;Bolt;1;Linen Thread;1;Weeping Willow Board
-Wool Thread;Journeyman;Bolt;1;Wool Thread;1;Weeping Willow Board
-Cotton Thread;Apprentice;Bolt;1;Cotton Thread;1;Weeping Willow Board
-Bluebell Thread;Apprentice;Bolt;1;Giant Bluebell;1;Weeping Willow Board
-Moon Thread;Apprentice;Bolt;1;Moonbell;1;Weeping Willow Board
-Spindlehemp Thread;Journeyman;Bolt;1;Spindlevine;1;Braidwood Board
-Gloom Thread;Journeyman;Bolt;1;Gloomy Pross Petals;1;Braidwood Board
-Grave Thread;Journeyman;Bolt;1;Grave Lily;1;Braidwood Board
-Bloodboiled Thread;Journeyman;Bolt;1;Blood-Boiled Spiritbloom;1;Braidwood Board
-Snowdrop Bolt;Apprentice;Bolt;1;Snowdrop;1;Oak Board
-Daffodill Bolt;Apprentice;Bolt;1;Daffodill;1;Ash Board
-Linen Tassel;Journeyman;Tassel;1;Linen Thread;;
-Ash Warp;Apprentice;Warp;1;Wood Oil;1;Ash Wood
-Eastern Hemlock Warp;Apprentice;Warp;1;Wood Oil;1;Eastern Hemlock Wood
-Oak Warp;Apprentice;Warp;1;Wood Oil;1;Oak Wood
-Western Larch Warp;Apprentice;Warp;1;Wood Oil;1;Western Larch Wood
-Weeping Willow Warp;Apprentice;Warp;1;Wood Oil;2;Weeping Willow Wood
-Braidwood Warp;Journeyman;Warp;1;Wood Oil;2;Braidwood Wood
+Bluebell Thread;Apprentice;Thread;2;Giant Bluebell;;
+Moon Thread;Apprentice;Thread;2;Moonbell;;
+Dracaena Thread;Novice;Thread;1;Dracaena;;
+Banana Thread;Journeyman;Thread;2;Banana;;
+Agave Thread;Novice;Thread;1;Agave;;
+#Bolt
+Wool Bolt;Journeyman;Bolt;2;Wool Thread;1;Weeping Willow Board
+Cotton Bolt;Apprentice;Bolt;2;Cotton Thread;1;Weeping Willow Board
+Silk Bolt;Apprentice;Bolt;2;Silk Thread;1;Weeping Willow Board
+Spider Silk Bolt;Apprentice;Bolt;2;Spider Silk Thread;1;Weeping Willow Board
+Linen Bolt;Apprentice;Bolt;2;Linen Thread;1;Weeping Willow Board
+Bluebell Bolt;Apprentice;Bolt;2;Giant Bluebell;1;Weeping Willow Board
+Moon Bolt;Apprentice;Bolt;2;Moonbell;1;Weeping Willow Board
+Spindlehemp Bolt;Journeyman;Bolt;2;Spindlevine;1;Braidwood Board
+Gloom Bolt;Journeyman;Bolt;2;Gloomy Pross Petals;1;Braidwood Board
+Grave Bolt;Journeyman;Bolt;2;Grave Lily;1;Braidwood Board
+Bloodboiled Bolt;Journeyman;Bolt;2;Blood-Boiled Spiritbloom;1;Braidwood Board
+Snowdrop Bolt;Apprentice;Bolt;2;Snowdrop;1;Oak Board
+Daffodill Bolt;Apprentice;Bolt;2;Daffodill;1;Ash Board
+Dracaena Bolt;Apprentice;Bolt;2;Dracaena Thread;1;Banyan Board
+Banana Bolt;Journeyman;Bolt;2;Banana Thread;1;Dried Coconut Board
+Agave Bolt;Apprentice;Bolt;2;Agave Thread;1;Acacia Board
+#Plaiting
+Oak Plaiting;Apprentice;Plaiting;2;Oak Warp;;
+Ash Plaiting;Apprentice;Plaiting;2;Ash Warp;;
+Eastern Hemlock Plaiting;Apprentice;Plaiting;2;Eastern Hemlock Warp;;
+Western Larch Plaiting;Apprentice;Plaiting;2;Western Larch Warp;;
+Weeping Willow Plaiting;Apprentice;Plaiting;2;Weeping Willow Warp;;
+Braidwood Plaiting;Journeyman;Plaiting;2;Braidwood Warp;;
+Date Palm Plaiting;Apprentice;Plaiting;2;Date Palm Warp;;
+Dragon Tree Plaiting;Apprentice;Plaiting;2;Dragon Tree Warp;;
+Acacia Plaiting;Apprentice;Plaiting;2;Acacia Warp;;
+Coconut Plaiting;Apprentice;Plaiting;2;Coconut Warp;;
+Plumeria Plaiting;Apprentice;Plaiting;2;Plumeria Warp;;
+#Fiber
 Snowdrop Thread;Novice;Fiber;1;Snowdrop;;
 Daffodill Thread;Novice;Fiber;1;Daffodill;;
+#Lace
 Spider Silk Lace;Journeyman;Lace;1;Spider Silk Bolt;;
