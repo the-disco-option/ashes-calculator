@@ -87,7 +87,7 @@ interface Vendor {
 - [ ] Jeweler
 - [ ] Scribe
 - [ ] Weapon Smithing
-- [ ] Carpentry
+- [x] Carpentry
 
 ### Gathering
 

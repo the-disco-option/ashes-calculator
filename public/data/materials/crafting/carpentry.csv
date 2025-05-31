@@ -1,9 +1,109 @@
-Name;Level;Category;Amount1;Material1
-Ash Caravan Carriage;Novice;Item;10;Ash Timber
-Eastern Hemlock Caravan Carriage;Novice;Item;10;Eastern Hemlock Timber
-Oak Caravan Carriage;Novice;Item;10;Oak Timber
-Western Larch Caravan Carriage;Novice;Item;10;Western Larch Timber
-Small Ash Caravan Crate;Novice;Item;5;Ash Timber
-Small Eastern Hemlock Crate;Novice;Item;5;Eastern Hemlock Timber
-Small Oak Caravan Crate;Novice;Item;5;Oak Timber
-Small Western Larch Crate;Novice;Item;5;Western Larch Timber
+Name;Level;Category;Amount1;Material1;Amount2;Material2;Amount3;Material3;Amount4;Material4;Amount5;Material5
+#Crate
+Large Oak Crate;Apprentice;Crate;30;Dried Oak Beam;;;;;;;;
+Large Ash Crate;Apprentice;Crate;30;Dried Ash Beam;;;;;;;;
+Large Eastern Hemlock Crate;Apprentice;Crate;30;Dried Eastern Hemlock Beam;;;;;;;;
+Large Western Larch Crate;Apprentice;Crate;30;Dried Western Larch Beam;;;;;;;;
+Extra Large Oak Crate;Journeyman;Crate;40;Oak Timber;1;Wood Oil;;;;;;
+Extra Large Ash Crate;Journeyman;Crate;40;Ash Timber;1;Wood Oil;;;;;;
+Extra Large Eastern Hemlock Crate;Journeyman;Crate;40;Eastern Hemlock Timber;1;Wood Oil;;;;;;
+Extra Large Western Larch Crate;Journeyman;Crate;40;Western Larch Timber;1;Wood Oil;;;;;;
+Small Oak Crate;Novice;Crate;10;Oak Timber;;;;;;;;
+Small Ash Crate;Novice;Crate;10;Ash Timber;;;;;;;;
+Small Eastern Hemlock Crate;Novice;Crate;10;Eastern Hemlock Timber;;;;;;;;
+Small Western Larch Crate;Novice;Crate;10;Western Larch Timber;;;;;;;;
+Medium Oak Crate;Apprentice;Crate;20;Oak Plank;;;;;;;;
+Medium Ash Crate;Apprentice;Crate;20;Ash Plank;;;;;;;;
+Medium Eastern Hemlock Crate;Apprentice;Crate;20;Eastern Hemlock Plank;;;;;;;;
+Medium Western Larch Crate;Apprentice;Crate;20;Western Larch Plank;;;;;;;;
+Medium Weeping Willow Crate;Apprentice;Crate;20;Weeping Willow Plank;;;;;;;;
+Medium Braidwood Crate;Journeyman;Crate;20;Braidwood Plank;;;;;;;;
+Large Weeping Willow Crate;Apprentice;Crate;30;Dried Weeping Willow Beam;;;;;;;;
+Large Braidwood Crate;Journeyman;Crate;30;Dried Braidwood Beam;;;;;;;;
+Small Weeping Willow Crate;Apprentice;Crate;10;Weeping Willow Board;;;;;;;;
+Small Braidwood Crate;Journeyman;Crate;10;Braidwood Board;;;;;;;;
+Small Acacia Crate;Novice;Crate;10;Acacia Timber;;;;;;;;
+Medium Acacia Crate;Apprentice;Crate;20;Acacia Plank;;;;;;;;
+Large Acacia Crate;Journeyman;Crate;30;Dried Acacia Beam;;;;;;;;
+Small Date Palm Crate;Novice;Crate;10;Date Palm Timber;;;;;;;;
+Medium Date Palm Crate;Apprentice;Crate;20;Date Palm Plank;;;;;;;;
+Large Date Palm Crate;Journeyman;Crate;30;Dried Date Palm Beam;;;;;;;;
+Small Joshua Tree Crate;Novice;Crate;10;Joshua Tree Timber;;;;;;;;
+Medium Joshua Tree Crate;Apprentice;Crate;20;Joshua Tree Plank;;;;;;;;
+Large Joshua Tree Crate;Journeyman;Crate;30;Dried Joshua Tree Beam;;;;;;;;
+Small Dragon Tree Crate;Novice;Crate;10;Dragon Tree Timber;;;;;;;;
+Medium Dragon Tree Crate;Apprentice;Crate;20;Dragon Tree Plank;;;;;;;;
+Large Dragon Tree Crate;Journeyman;Crate;30;Dried Dragon Tree Beam;;;;;;;;
+Small Coconut Crate;Novice;Crate;10;Coconut Timber;;;;;;;;
+Medium Coconut Crate;Apprentice;Crate;20;Coconut Plank;;;;;;;;
+Large Coconut Crate;Journeyman;Crate;30;Dried Coconut Beam;;;;;;;;
+Small Plumeria Crate;Novice;Crate;10;Plumeria Timber;;;;;;;;
+Medium Plumeria Crate;Apprentice;Crate;20;Plumeria Plank;;;;;;;;
+Large Plumeria Crate;Journeyman;Crate;30;Dried Plumeria Beam;;;;;;;;
+#Caravan Component
+Oak Caravan Armor;Apprentice;Caravan Component;10;Dried Oak Board;10;Dried Oak Beam;;;;;;
+Ash Caravan Armor;Apprentice;Caravan Component;10;Dried Ash Board;10;Dried Ash Beam;;;;;;
+Eastern Hemlock Caravan Armor;Apprentice;Caravan Component;10;Dried Eastern Hemlock Board;10;Dried Eastern Hemlock Beam;;;;;;
+Ash Caravan Carriage;Novice;Caravan Component;10;Ash Timber;;;;;;;;
+Western Larch Caravan Armor;Apprentice;Caravan Component;10;Dried Western Larch Board;10;Dried Western Larch Beam;;;;;;
+Oak Caravan Carriage;Novice;Caravan Component;10;Oak Timber;;;;;;;;
+Oak Caravan Chassis;Apprentice;Caravan Component;10;Oak Board;10;Oak Beam;;;;;;
+Ash Caravan Chassis;Apprentice;Caravan Component;10;Ash Board;10;Ash Beam;;;;;;
+Eastern Hemlock Caravan Chassis;Apprentice;Caravan Component;10;Eastern Hemlock Board;10;Eastern Hemlock Beam;;;;;;
+Western Larch Caravan Chassis;Apprentice;Caravan Component;10;Western Larch Board;10;Western Larch Beam;;;;;;
+Oak Caravan Wheels;Apprentice;Caravan Component;10;Oak Board;10;Oak Beam;;;;;;
+Ash Caravan Wheels;Apprentice;Caravan Component;10;Ash Board;10;Ash Beam;;;;;;
+Eastern Hemlock Caravan Wheels;Apprentice;Caravan Component;10;Eastern Hemlock Board;10;Eastern Hemlock Beam;;;;;;
+Western Larch Caravan Wheels;Apprentice;Caravan Component;10;Western Larch Board;10;Western Larch Beam;;;;;;
+Western Larch Caravan Carriage;Novice;Caravan Component;10;Western Larch Timber;;;;;;;;
+Eastern Hemlock Caravan Carriage;Novice;Caravan Component;10;Eastern Hemlock Timber;;;;;;;;
+Braidwood Caravan Armor;Journeyman;Caravan Component;10;Dried Braidwood Board;10;Dried Braidwood Beam;;;;;;
+Weeping Willow Caravan Carriage;Apprentice;Caravan Component;10;Weeping Willow Board;10;Weeping Willow Beam;;;;;;
+Braidwood Caravan Carriage;Journeyman;Caravan Component;10;Dried Braidwood Board;10;Dried Braidwood Beam;;;;;;
+Weeping Willow Caravan Chassis;Apprentice;Caravan Component;10;Weeping Willow Plank;10;Weeping Willow Beam;;;;;;
+Braidwood Caravan Chassis;Journeyman;Caravan Component;10;Dried Braidwood Board;10;Dried Braidwood Beam;;;;;;
+Weeping Willow Caravan Wheels;Apprentice;Caravan Component;10;Weeping Willow Board;10;Weeping Willow Plank;;;;;;
+Weeping Willow Caravan Armor;Journeyman;Caravan Component;10;Dried Weeping Willow Board;10;Dried Weeping Willow Beam;;;;;;
+Braidwood Caravan Wheels;Journeyman;Caravan Component;10;Dried Braidwood Board;10;Dried Braidwood Plank;;;;;;
+Dragon Tree Caravan Armor;Journeyman;Caravan Component;10;Dried Dragon Tree Board;10;Dried Dragon Tree Beam;;;;;;
+Dragon Tree Caravan Carriage;Apprentice;Caravan Component;10;Dragon Tree Board;10;Dragon Tree Beam;;;;;;
+Dragon Tree Caravan Chassis;Apprentice;Caravan Component;10;Dragon Tree Plank;10;Dragon Tree Beam;;;;;;
+Dragon Tree Caravan Wheels;Apprentice;Caravan Component;10;Dragon Tree Board;10;Dragon Tree Plank;;;;;;
+Coconut Caravan Armor;Journeyman;Caravan Component;10;Dried Coconut Board;10;Dried Coconut Beam;;;;;;
+Coconut Caravan Carriage;Novice;Caravan Component;10;Coconut Timber;;;;;;;;
+Coconut Caravan Chassis;Apprentice;Caravan Component;10;Coconut Plank;10;Coconut Beam;;;;;;
+Coconut Caravan Wheels;Apprentice;Caravan Component;10;Coconut Board;10;Coconut Plank;;;;;;
+Plumeria Caravan Armor;Journeyman;Caravan Component;10;Dried Plumeria Board;10;Dried Plumeria Beam;;;;;;
+Plumeria Caravan Carriage;Novice;Caravan Component;10;Plumeria Timber;;;;;;;;
+Plumeria Caravan Chassis;Apprentice;Caravan Component;10;Plumeria Plank;10;Plumeria Beam;;;;;;
+Plumeria Caravan Wheels;Apprentice;Caravan Component;10;Plumeria Board;10;Plumeria Plank;;;;;;
+Acacia Caravan Armor;Journeyman;Caravan Component;10;Dried Acacia Board;10;Dried Acacia Beam;;;;;;
+Acacia Caravan Carriage;Novice;Caravan Component;10;Acacia Timber;;;;;;;;
+Acacia Caravan Chassis;Apprentice;Caravan Component;10;Acacia Plank;10;Acacia Beam;;;;;;
+Acacia Caravan Wheels;Apprentice;Caravan Component;10;Acacia Board;10;Acacia Plank;;;;;;
+Date Palm Caravan Armor;Journeyman;Caravan Component;10;Dried Date Palm Board;10;Dried Date Palm Beam;;;;;;
+Date Palm Caravan Carriage;Novice;Caravan Component;10;Date Palm Timber;;;;;;;;
+Date Palm Caravan Chassis;Apprentice;Caravan Component;10;Date Palm Plank;10;Date Palm Beam;;;;;;
+Date Palm Caravan Wheels;Apprentice;Caravan Component;10;Date Palm Board;10;Date Palm Plank;;;;;;
+Joshua Tree Caravan Armor;Journeyman;Caravan Component;10;Dried Joshua Tree Board;10;Dried Joshua Tree Beam;;;;;;
+Joshua Tree Caravan Carriage;Journeyman;Caravan Component;10;Dried Joshua Tree Board;10;Dried Joshua Tree Beam;;;;;;
+Joshua Tree Caravan Chassis;Journeyman;Caravan Component;10;Dried Joshua Tree Board;10;Dried Joshua Tree Beam;;;;;;
+Joshua Tree Caravan Wheels;Journeyman;Caravan Component;10;Dried Joshua Tree Board;10;Dried Joshua Tree Plank;;;;;;
+#Shortbow
+Copper Shortbow;Novice;Shortbow;1;Bee's Wax;35;Oak Timber;1;Copper Fragments;1;Linen Thread;;
+Tin Shortbow;Apprentice;Shortbow;1;Bee's Wax;35;Weeping Willow Plank;1;Tin Ingot;1;Silk Thread;;
+Iron Shortbow;Journeyman;Shortbow;1;Bee's Wax;35;Dried Braidwood Plank;1;Spindlehemp Thread;1;Iron Ingot;;
+Iron Short Spellbow;Journeyman;Shortbow;1;Bee's Wax;35;Dried Braidwood Plank;1;Spindlehemp Thread;1;Iron Ingot;1;Magic Powder
+Copper Shortbow;Novice;Shortbow;1;Bee's Wax;35;Oak Timber;1;Copper Fragments;1;Linen Thread;1;Magic Powder
+Tin Shortbow;Apprentice;Shortbow;1;Bee's Wax;35;Weeping Willow Plank;1;Tin Ingot;1;Silk Thread;1;Magic Powder
+#Longbow
+Copper Longbow;Novice;Shortbow;35;Oak Timber;1;Copper Fragments;1;Linen Thread;;;;
+Tin Longbow;Apprentice;Longbow;1;Bee's Wax;35;Weeping Willow Plank;1;Tin Ingot;1;Silk Thread;;
+Iron Longbow;Journeyman;Longbow;1;Bee's Wax;35;Dried Braidwood Plank;1;Spindlehemp Thread;1;Iron Ingot;;
+Iron Long Spellbow;Journeyman;Longbow;1;Bee's Wax;35;Dried Braidwood Plank;1;Spindlehemp Thread;1;Iron Ingot;1;Magic Powder
+Copper Long Spellbow;Novice;Longbow;1;Bee's Wax;35;Oak Timber;1;Copper Fragments;1;Linen Thread;1;Magic Powder
+Tin Long Spellbow;Apprentice;Longbow;1;Bee's Wax;35;Weeping Willow Plank;1;Tin Ingot;1;Silk Thread;1;Magic Powder
+#Other
+Siege Banner Pole;Novice;Siege Declaration;40;Oak Timber;;;;;;;;
+Oak Ship Hull;Novice;Ship Component;100;Oak Timber;;;;;;;;
+Trophy Pedestal;Apprentice;Reagent;1;Dried Braidwood Beam;1;Copper Armor Plating;1;Limestone Sand;1;Acacia Paper;;
