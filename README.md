@@ -103,7 +103,7 @@ interface Vendor {
 
 - [ ] Metalworking
 - [ ] Weaving
-- [ ] Stonemasonry
+- [x] Stonemasonry
 - [ ] Tanning
 - [ ] Lumber Milling
 - [ ] Farming
