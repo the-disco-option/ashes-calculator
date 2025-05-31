@@ -1,21 +1,52 @@
 Name;Level;Category;Amount1;Material1;Amount2;Material2;Amount3;Material3
+#Ingot
 Gold Ingot;Grandmaster;Ingot;1;Flux;3;Gold;;
 Rividium Ingot;Journeyman;Ingot;1;Flux;2;Rividium Fragments;;
 Silver Ingot;Master;Ingot;1;Flux;3;Silver;;
 Stellarium Ingot;Master;Ingot;1;Flux;3;Stellarium;;
 Tin Ingot;Apprentice;Ingot;1;Flux;2;Tin Fragments;;
-Copper Ingot;Novice;Ingot;1;Flux;2;Copper Fragments;;
-Zinc Ingot;Novice;Ingot;1;Flux;2;Zinc Fragments;;
-Bronze Ingot;Apprentice;Ingot;1;Flux;1;Copper Fragments;2;Tin Fragments
+Copper Ingot;Apprentice;Ingot;1;Flux;2;Copper Fragments;;
+Zinc Ingot;Apprentice;Ingot;1;Flux;2;Zinc Fragments;;
+Bronze Ingot;Apprentice;Ingot;1;Flux;2;Tin Fragments;1;Copper Fragments
 Brass Ingot;Apprentice;Ingot;1;Flux;2;Copper Fragments;1;Zinc Fragments
 Steel Ingot;Journeyman;Ingot;1;Flux;2;Iron Fragments;1;Coke
 Glittering Steel Ingot;Journeyman;Ingot;1;Flux;1;Glittering Metal Strand;2;Steel Ingot
 Iron Ingot;Journeyman;Ingot;1;Flux;2;Iron Fragments;;
-Copper Fragments;Novice;Metal Fragments;1;Copper;;;;
+#Armor Plating
+Zinc Armor Plating;Journeyman;Armor Plating;1;Flux;2;Molten Zinc;;
+Copper Armor Plating;Journeyman;Armor Plating;1;Flux;2;Molten Copper;;
+Brass Armor Plating;Journeyman;Armor Plating;1;Flux;2;Molten Brass;;
+Tin Armor Plating;Journeyman;Armor Plating;1;Flux;2;Molten Tin;;
+Bronze Armor Plating;Journeyman;Armor Plating;1;Flux;2;Molten Bronze;;
+Rividium Armor Plating;Journeyman;Armor Plating;1;Flux;2;Molten Rividium;;
+Iron Armor Plating;Journeyman;Chain Mail;1;Flux;2;Molten Iron;;
+Steel Armor Plating;Journeyman;Armor Plating;1;Flux;2;Molten Iron;;
+#Chain Mail
+Zinc Chain Mail;Journeyman;Chain Mail;1;Flux;2;Molten Zinc;;
+Copper Chain Mail;Journeyman;Chain Mail;1;Flux;2;Molten Copper;;
+Tin Chain Mail;Journeyman;Chain Mail;1;Flux;2;Molten Tin;;
+Brass Chain Mail;Journeyman;Chain Mail;1;Flux;2;Molten Brass;;
+Bronze Chain Mail;Journeyman;Chain Mail;1;Flux;2;Molten Bronze;;
+Iron Chain Mail;Journeyman;Chain Mail;1;Flux;2;Molten Iron;;
+Rividium Chain Mail;Journeyman;Chain Mail;1;Flux;2;Molten Rividium;;
+Steel Chain Mail;Journeyman;Chain Mail;1;Flux;2;Molten Steel;;
+#Metal Fragments
 Zinc Fragments;Novice;Metal Fragments;1;Zinc;;;;
-Tin Fragments;Apprentice;Metal Fragments;1;Tin;;;;
+Copper Fragments;Novice;Metal Fragments;1;Copper;;;;
+Tin Fragments;Apprentice;Metal Fragments;2;Tin;;;;
 Iron Fragments;Journeyman;Metal Fragments;2;Iron;;;;
 Rividium Fragments;Journeyman;Metal Fragments;2;Rividium;;;;
+#Molten Metal
+Molten Copper;Journeyman;Molten Metal;2;Copper Fragments;;;;
+Molten Zinc;Journeyman;Molten Metal;2;Zinc Fragments;;;;
+Molten Tin;Journeyman;Molten Metal;2;Tin Fragments;;;;
+Molten Iron;Journeyman;Molten Metal;2;Iron Fragments;;;;
+Molten Rividium;Journeyman;Molten Metal;2;Rividium Fragments;;;;
+Molten Steel;Journeyman;Molten Metal;2;Iron Fragments;1;Coke;;
+Molten Brass;Journeyman;Molten Metal;2;Copper Fragments;1;Zinc Fragments;;
+Molten Bronze;Journeyman;Molten Metal;2;Tin Fragments;1;Copper Fragments;;
+#Fuel
 Coke;Journeyman;Fuel;2;Coal;;;;
 Charcoal;Apprentice;Fuel;2;Oak Wood;;;;
+#Powder
 Colcothar;Novice;Powder;1;Copper;;;;

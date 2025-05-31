@@ -101,7 +101,7 @@ interface Vendor {
 
 ### Processing
 
-- [ ] Metalworking
+- [x] Metalworking
 - [ ] Weaving
 - [x] Stonemasonry
 - [ ] Tanning
