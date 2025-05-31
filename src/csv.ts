@@ -20,6 +20,7 @@ export async function csv<T extends z.ZodTypeAny>(filename: string, schema: T) {
   const [headers, ...rows] = text
     .split('\n')
     .filter((line) => line.trim().length > 0) // filter out empty lines
+    .filter((line) => line[0] != '#') // filter out comments
     .map((line) => line.split(';'))
   const no_columns = headers.length
 
