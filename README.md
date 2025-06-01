@@ -108,5 +108,5 @@ interface Vendor {
 - [x] Lumber Milling
 - [ ] Farming
 - [ ] Animal Husbandry
-- [ ] Alchemy
+- [x] Alchemy
 - [ ] Cooking
