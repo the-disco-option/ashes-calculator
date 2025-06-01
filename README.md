@@ -105,7 +105,7 @@ interface Vendor {
 - [ ] Weaving
 - [x] Stonemasonry
 - [ ] Tanning
-- [ ] Lumber Milling
+- [x] Lumber Milling
 - [ ] Farming
 - [ ] Animal Husbandry
 - [ ] Alchemy
