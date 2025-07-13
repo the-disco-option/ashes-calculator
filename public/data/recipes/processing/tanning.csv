@@ -1,0 +1,4 @@
+RecipeName;Level;Category;OutputMaterial1;OutputAmount1;OutputMaterial2;OutputAmount2;OutputMaterial3;OutputAmount3;InputMaterial1;InputAmount1
+# skinning
+Skin Grem;Novice;Skinning;Grem Skin;1;Grem Bone;1;Animal Fat;1;Grem Carcass;1
+Skin Raven;Novice;Skinning;Raven Skin;1;Raven Bone;1;Raven Feather;1;Raven Carcass;1

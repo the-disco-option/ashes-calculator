@@ -1,0 +1,3 @@
+RecipeName;Level;Category;Cost;OutputMaterial1;OutputAmount1;OutputMaterial2;OutputAmount2;OutputMaterial3;OutputAmount3;InputMaterial1;InputAmount1
+# ground mounts
+Tame Horse;Novice;Animal Husbandry;50;Horse Mount;1;Horse Beast of Burden;1;;;Horse;1

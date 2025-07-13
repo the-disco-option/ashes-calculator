@@ -1,4 +1,6 @@
 RecipeId;RecipeName;Name;Level;Category;Output;Amount1;Material1
+#leather
+#skin
 animal-fat-grem;Animal Fat (Grem);Animal Fat;Novice;Skinning;5;1;Grem Carcass
 ;Grem Skin;Grem Skin;Novice;Skinning;5;1;Grem Carcass
 animal-fat-bear;Animal Fat (Bear);Animal Fat;Novice;Skinning;5;1;Bear Carcass
