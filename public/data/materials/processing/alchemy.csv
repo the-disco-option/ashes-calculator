@@ -1,55 +1,55 @@
-Name;Level;Category;Amount1;Material1;Amount2;Material2;Amount2;Material3
+Name;Level;Category;Amount1;Material1;Amount2;Material2;Amount2;Material3;Amount3
 #Potion
-Apprentice Health Potion;Apprentice;Potion;1;Beast Blood;1;Water;2;Emerald Powder
-Apprentice Mana Potion;Apprentice;Potion;1;Beast Blood;1;Water;2;Giant Bluebell Powder
-Journeyman Mana Potion;Journeyman;Potion;1;Beast Blood;1;Water;2;Grave Lily Powder
-Journeyman Health Potion;Journeyman;Potion;1;Beast Blood;1;Water;2;Sapphire Powder
+Apprentice Health Potion;Apprentice;Potion;1;Beast Blood;1;Water;2;Emerald Powder;
+Apprentice Mana Potion;Apprentice;Potion;1;Beast Blood;1;Water;2;Giant Bluebell Powder;1
+Journeyman Mana Potion;Journeyman;Potion;1;Beast Blood;1;Water;2;Grave Lily Powder;1
+Journeyman Health Potion;Journeyman;Potion;1;Beast Blood;1;Water;2;Sapphire Powder;1
 #Powder
-Snowdrop Powder;Novice;Powder;1;Snowdrop
-Daffodil Powder;Novice;Powder;1;Daffodil
-Magic Powder;Novice;Powder;1;Essence Crystal;1;Snowdrop;1;Daffodil
-Ruby Powder;Novice;Powder;1;Ruby
-Halcyonite Powder;Apprentice;Powder;2;Halcyonite
-Spindlevine Powder;Journeyman;Powder;2;Spindlevine
-Grave Lily Powder;Journeyman;Powder;2;Grave Lily
-Gloomy Pross Powder;Journeyman;Powder;2;Gloomy Pross Petals
-Halcyonite Powder;Journeyman;Powder;2;Halcyonite
-Sapphire Powder;Journeyman;Powder;2;Sapphire
-Lumadon Powder;Journeyman;Powder;2;Lumadon
-Giant Bluebell Powder;Apprentice;Powder;2;Giant Bluebell
-Moonbell Powder;Apprentice;Powder;2;Moonbell
-Emerald Powder;Apprentice;Powder;2;Emerald
-Poppy Powder;Novice;Powder;1;Poppy
-Agave Powder;Novice;Powder;1;Agave
-Paintbrush Powder;Apprentice;Powder;2;Paintbrush
-Obsidian Powder;Apprentice;Powder;2;Obsidian
-Volcanic Rock Powder;Novice;Powder;1;Volcanic Rock
-Dead Coral Powder;Novice;Powder;1;Dead Coral
-Dracaena Powder;Novice;Powder;1;Dracaena
-Giant Fern Powder;Novice;Powder;1;Giant Fern
-Elephant Ear Powder;Novice;Powder;1;Elephant Ear
-Bird of Paradise Powder;Apprentice;Powder;2;Bird of Paradise
-Fungal Anemone Powder;Journeyman;Powder;2;Fungal Anemone
+Snowdrop Powder;Novice;Powder;1;Snowdrop;1;;;;
+Daffodil Powder;Novice;Powder;1;Daffodil;1;;;;
+Magic Powder;Novice;Powder;1;Essence Crystal;1;Snowdrop;1;Daffodil;1
+Ruby Powder;Novice;Powder;1;Ruby;1;;;;
+Halcyonite Powder;Apprentice;Powder;2;Halcyonite;1;;;;
+Spindlevine Powder;Journeyman;Powder;2;Spindlevine;1;;;;
+Grave Lily Powder;Journeyman;Powder;2;Grave Lily;1;;;;
+Gloomy Pross Powder;Journeyman;Powder;2;Gloomy Pross Petals;1;;;;
+Halcyonite Powder;Journeyman;Powder;2;Halcyonite;1;;;;
+Sapphire Powder;Journeyman;Powder;2;Sapphire;1;;;;
+Lumadon Powder;Journeyman;Powder;2;Lumadon;1;;;;
+Giant Bluebell Powder;Apprentice;Powder;2;Giant Bluebell;1;;;;
+Moonbell Powder;Apprentice;Powder;2;Moonbell;1;;;;
+Emerald Powder;Apprentice;Powder;2;Emerald;1;;;;
+Poppy Powder;Novice;Powder;1;Poppy;1;;;;
+Agave Powder;Novice;Powder;1;Agave;1;;;;
+Paintbrush Powder;Apprentice;Powder;2;Paintbrush;1;;;;
+Obsidian Powder;Apprentice;Powder;2;Obsidian;1;;;;
+Volcanic Rock Powder;Novice;Powder;1;Volcanic Rock;1;;;;
+Dead Coral Powder;Novice;Powder;1;Dead Coral;1;;;;
+Dracaena Powder;Novice;Powder;1;Dracaena;1;;;;
+Giant Fern Powder;Novice;Powder;1;Giant Fern;1;;;;
+Elephant Ear Powder;Novice;Powder;1;Elephant Ear;1;;;;
+Bird of Paradise Powder;Apprentice;Powder;2;Bird of Paradise;1;;;;
+Fungal Anemone Powder;Journeyman;Powder;2;Fungal Anemone;1;;;;
 #Salve
-Novice Health Salve;Novice;Salve;1;Honey Comb;1;Ruby Powder;
-Novice Mana Salve;Novice;Salve;1;Honey Comb;1;Ruby Powder;
-Apprentice Health Salve;Apprentice;Salve;1;Honey Comb;2;Giant Bluebell Powder;1;Linen Bolt
-Apprentice Mana Salve;Apprentice;Salve;1;Honey Comb;2;Halcyonite Powder;1;Linen Bolt
-Journeyman Health Salve;Journeyman;Salve;1;Honey Comb;2;Lumadon Powder;1;Spindlehemp Bolt
-Journeyman Mana Salve;Journeyman;Salve;1;Honey Comb;2;Spindlevine Powder;1;Spindlehemp Bolt
+Novice Health Salve;Novice;Salve;1;Honey Comb;1;Ruby Powder;1;;
+Novice Mana Salve;Novice;Salve;1;Honey Comb;1;Ruby Powder;1;;
+Apprentice Health Salve;Apprentice;Salve;1;Honey Comb;2;Giant Bluebell Powder;1;Linen Bolt;1
+Apprentice Mana Salve;Apprentice;Salve;1;Honey Comb;2;Halcyonite Powder;1;Linen Bolt;1
+Journeyman Health Salve;Journeyman;Salve;1;Honey Comb;2;Lumadon Powder;1;Spindlehemp Bolt;1
+Journeyman Mana Salve;Journeyman;Salve;1;Honey Comb;2;Spindlevine Powder;1;Spindlehemp Bolt;1
 #Ink
-Red Ink;Novice;Ink;1;Water;1;Ruby Powder;
-White Ink;Novice;Ink;1;Water;1;Snowdrop Powder;
-Yellow Ink;Novice;Ink;1;Water;1;Daffodil Powder;
-Green Ink;Apprentice;Ink;1;Water;2;Emerald Powder;
-Black Ink;Journeyman;Ink;1;Water;2;Grave Lily Powder;1;Ethanol
-Blue Ink;Journeyman;Ink;1;Water;2;Sapphire Powder;1;Ethanol
+Red Ink;Novice;Ink;1;Water;1;Ruby Powder;1;;
+White Ink;Novice;Ink;1;Water;1;Snowdrop Powder;1;;
+Yellow Ink;Novice;Ink;1;Water;1;Daffodil Powder;1;;
+Green Ink;Apprentice;Ink;1;Water;2;Emerald Powder;1;;
+Black Ink;Journeyman;Ink;1;Water;2;Grave Lily Powder;1;Ethanol;1
+Blue Ink;Journeyman;Ink;1;Water;2;Sapphire Powder;1;Ethanol;1
 #Chemical
-Sodium Carbonate;Journeyman;Chemical;1;Salt;1;Water;2;Limestone
-Ethanol;Journeyman;Chemical;2;Malted Corn;1;Yeast
+Sodium Carbonate;Journeyman;Chemical;1;Salt;1;Water;2;Limestone;1
+Ethanol;Journeyman;Chemical;2;Malted Corn;1;Yeast;1;;
 #Siege Declaration
-Permanent Ink;Novice;Siege Declaration;40;Beast Blood;40;Ruby Powder
+Permanent Ink;Novice;Siege Declaration;40;Beast Blood;40;Ruby Powder;1;;
 #Liquid
-Poppy Milk;Apprentice;Liquid;2;Poppy
-Scorpion Venom;Novice;Liquid;1;Scorpion Venom Gland
-Turpentine;Novice;Liquid;1;Western Larch Wood
+Poppy Milk;Apprentice;Liquid;2;Poppy;1;;;;
+Scorpion Venom;Novice;Liquid;1;Scorpion Venom Gland;1;;;;
+Turpentine;Novice;Liquid;1;Western Larch Wood;1;;;;
