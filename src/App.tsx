@@ -8,7 +8,7 @@ function App() {
 
   return (
     <>
-      <h1>Ashes Calculator</h1>
+      <h1 className="text-2xl">Ashes Calculator</h1>
       <BuildTargets />
     </>
   )

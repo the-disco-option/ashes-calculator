@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "This is the repostory for the [Ashes of Creation Calculator](https://the-disco-option.github.io/ashes-calculator/calc.html), a tool for calculating crafting requirements for [Ashes of Creation](https://ashesofcreation.com).",
   "main": "init.js",
+  "type": "module",
   "packageManager": "pnpm@10.11.0",
   "directories": {
     "doc": "docs"
@@ -19,6 +20,7 @@
   "dependencies": {
     "@floating-ui/react": "^0.27.7",
     "@popperjs/core": "^2.11.8",
+    "@tailwindcss/vite": "^4.1.11",
     "@vitejs/plugin-react": "^4.7.0",
     "d3": "6.5.0",
     "immer": "^10.1.1",
@@ -27,6 +29,7 @@
     "prettier": "^3.4.2",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.11",
     "typescript-event-target": "^1.1.1",
     "zod": "^3.25.28"
   },
@@ -38,6 +41,7 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
+      "@tailwindcss/oxide",
       "esbuild"
     ]
   }
