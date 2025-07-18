@@ -13,9 +13,10 @@ See the License for the specific language governing permissions and
 limitations under the License.*/
 import { Formatter } from './align'
 import {
-  addBuildingTarget,
-  clearBuildingTargets,
-  removeBuildingTarget,
+  bridge_addBuildingTarget,
+  bridge_clearBuildingTargets,
+  bridge_removeBuildingTarget,
+  bridge_setItems,
 } from './build-targets/atom'
 import { renderDebug } from './debug'
 import { displayItems } from './display'
@@ -95,14 +96,14 @@ class FactorySpecification {
     this.debug = false
   }
   setData(
-    items,
-    recipes,
-    planets,
-    modules,
-    buildings,
-    belts,
-    fuels,
-    itemGroups
+    items: Map<string, Item> | null,
+    recipes: Map<string, Recipe> | null,
+    planets: null,
+    modules: Map<any, any>,
+    buildings: never[],
+    belts: Map<any, any>,
+    fuels: Map<any, any>,
+    itemGroups: any[][][]
   ) {
     this.items = items
     this.recipes = recipes
@@ -121,6 +122,7 @@ class FactorySpecification {
     this.itemGroups = itemGroups
     this.defaultPriority = this.getDefaultPriorityArray()
     this.priority = null
+    bridge_setItems(items?.values() ?? [])
   }
   setDefaultDisable() {
     this.disable.clear()
@@ -601,7 +603,7 @@ class FactorySpecification {
     )
     this.buildTargets.push(target)
     d3.select('#targets').insert(() => target.element, '#plusButton')
-    addBuildingTarget(target)
+    bridge_addBuildingTarget(target)
     return target
   }
   /** @deprecated use removeTargetIndex */
@@ -619,7 +621,7 @@ class FactorySpecification {
       throw new Error()
     }
 
-    removeBuildingTarget(index)
+    bridge_removeBuildingTarget(index)
     this.buildTargets.splice(index, 1)
     for (let i = index; i < this.buildTargets.length; i++) {
       this.buildTargets[i].index--
@@ -628,7 +630,7 @@ class FactorySpecification {
   }
   resetTargets() {
     this.buildTargets = []
-    clearBuildingTargets()
+    bridge_clearBuildingTargets()
   }
   toggleIgnore(item) {
     let updateTargets = false

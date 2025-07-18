@@ -1,24 +1,21 @@
-import React, {
-  memo,
-  PropsWithChildren,
-  useDeferredValue,
-  useState,
-  useSyncExternalStore,
-} from 'react'
-import { createRoot } from 'react-dom/client'
-import { spec } from '../factory'
+import { memo, PropsWithChildren, useDeferredValue, useState } from 'react'
 import { Item } from '../item'
 import { Tooltip, TooltipContent, TooltipTrigger } from '../new-tooltip'
-import { BuildTarget, changeRateHandler } from '../target'
-import { FactoryProvider, useFactory } from '../build-targets/atom'
+
+import { ItemInterface, useFactory, useItems } from '../build-targets/atom'
+import {
+  addBuildTarget,
+  removeBuildTarget,
+  setBuildTargetAmount,
+} from '../lib/actions'
 
 export function BuildTargets() {
   const [search, setSearch] = useState('')
   const deferredSearch = useDeferredValue(search)
-  const addItem = (item: Item) => {
+  const addItem = (item: ItemInterface) => {
     console.log('click', item)
     setSearch('')
-    spec.addTarget(item.key)
+    addBuildTarget(item.key)
   }
 
   const [factory] = useFactory()
@@ -30,11 +27,11 @@ export function BuildTargets() {
         placeholder="Type to search items"
         onChange={(e) => setSearch(e.currentTarget.value)}
       />
-      <SlowTable search={deferredSearch} onClick={addItem} />
+      <SearchResultsList search={deferredSearch} onClick={addItem} />
       <ul>
         {factory.targets.map((buildTarget, i) => (
           <li key={buildTarget.id}>
-            <button onClick={() => spec.removeTargetIndex(i)}>x</button>
+            <button onClick={() => removeBuildTarget(i)}>x</button>
             {buildTarget.itemKey}
             {buildTarget.recipeKey}
             <input
@@ -42,34 +39,32 @@ export function BuildTargets() {
               step={1}
               min={1}
               value={buildTarget.count}
-              onChange={(e) => {
-                const target = spec.buildTargets[i]
-
-                target.setRate(parseInt(e.currentTarget.value))
-                changeRateHandler(target)()
-              }}
+              onChange={(e) =>
+                setBuildTargetAmount(i, parseInt(e.currentTarget.value))
+              }
             />
           </li>
         ))}
         <li>
-          <button onClick={() => spec.addTarget('water')}>Add</button>
+          <button onClick={() => addBuildTarget('water')}>Add</button>
         </li>
       </ul>
     </div>
   )
 }
 
-const SlowTable = memo(function SlowTable({
+const SearchResultsList = memo(function SearchResultsList_Memo({
   search,
   onClick: onClick,
 }: {
   search: string
-  onClick?: (item: Item) => void
+  onClick?: (item: ItemInterface) => void
 }) {
-  if (search.trim().length === 0) {
+  const items = useItems()
+
+  if (search.trim().length < 2) {
     return
   }
-  const items = spec.items ? [...spec.items.values()] : []
 
   const filteredItems = items.filter(
     (item) => item.key.includes(search) || item.name.includes(search)
@@ -93,9 +88,7 @@ const SlowTable = memo(function SlowTable({
               style={{ background: 'darkgrey', cursor: 'pointer' }}
             >
               <td>
-                <ItemTooltip item={item}>
-                  <span>{item.key}</span>
-                </ItemTooltip>
+                <span>{item.key}</span>
               </td>
               <td>{item.name}</td>
               <td>
@@ -114,7 +107,10 @@ const SlowTable = memo(function SlowTable({
   )
 })
 
-function ItemTooltip({ children, item }: { item: Item } & PropsWithChildren) {
+function ItemTooltip({
+  children,
+  item,
+}: { item: Item | ItemInterface } & PropsWithChildren) {
   return (
     <Tooltip>
       <TooltipTrigger asChild>{children}</TooltipTrigger>

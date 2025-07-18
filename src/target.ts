@@ -11,7 +11,7 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.*/
-import { updateBuildingTarget } from './build-targets/atom'
+import { bridge_updateBuildingTarget } from './build-targets/atom'
 import { makeDropdown, addInputs } from './dropdown'
 import { spec } from './factory'
 import { Item } from './item'
@@ -29,7 +29,7 @@ function itemHandler(target) {
     target.item = item
     target.displayRecipes()
     spec.updateSolution()
-    updateBuildingTarget(target)
+    bridge_updateBuildingTarget(target)
   }
 }
 
@@ -44,7 +44,7 @@ function changeBuildingCountHandler(target) {
   return function () {
     target.buildingsChanged()
     spec.updateSolution()
-    updateBuildingTarget(target)
+    bridge_updateBuildingTarget(target)
   }
 }
 
@@ -52,7 +52,7 @@ export function changeRateHandler(target: BuildTarget) {
   return function () {
     target.rateChanged()
     spec.updateSolution()
-    updateBuildingTarget(target)
+    bridge_updateBuildingTarget(target)
   }
 }
 
@@ -267,7 +267,7 @@ export class BuildTarget {
       (d) => {
         self.recipe = d
         spec.updateSolution()
-        updateBuildingTarget(this)
+        bridge_updateBuildingTarget(this)
       }
     )
     labels.append((d) => d.icon.make(32, false, dropdown.node()))
@@ -310,7 +310,7 @@ export class BuildTarget {
     this.buildings = Rational.from_string(this.buildingInput.value)
     this.rate = zero
     this.rateInput.value = ''
-    updateBuildingTarget(this)
+    bridge_updateBuildingTarget(this)
   }
   setBuildings(count, recipe) {
     this.buildingInput.value = count
@@ -326,7 +326,7 @@ export class BuildTarget {
       spec.format.rateFactor
     )
     this.buildingInput.value = ''
-    updateBuildingTarget(this)
+    bridge_updateBuildingTarget(this)
   }
   setRate(rate) {
     console.log(this, rate)
