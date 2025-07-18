@@ -27,6 +27,8 @@ export const factoryStore = createStore()
 
 export const useFactory = () => useAtom(factoryAtom)
 
+// TODO: add handlers for the React side
+
 // these actions are used by the js code to update the store. Don't call from react.
 export const addBuildingTarget = (target: BuildTarget) => {
   factoryStore.set(factoryAtom, (draft) => {

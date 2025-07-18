@@ -48,7 +48,7 @@ function changeBuildingCountHandler(target) {
   }
 }
 
-function changeRateHandler(target) {
+export function changeRateHandler(target: BuildTarget) {
   return function () {
     target.rateChanged()
     spec.updateSolution()
@@ -329,6 +329,7 @@ export class BuildTarget {
     updateBuildingTarget(this)
   }
   setRate(rate) {
+    console.log(this, rate)
     this.rateInput.value = rate
     this.rateChanged()
   }
