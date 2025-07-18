@@ -19,6 +19,7 @@
   "dependencies": {
     "@floating-ui/react": "^0.27.7",
     "@popperjs/core": "^2.11.8",
+    "@vitejs/plugin-react": "^4.7.0",
     "d3": "6.5.0",
     "immer": "^10.1.1",
     "jotai": "^2.12.4",

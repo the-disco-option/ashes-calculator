@@ -96,7 +96,6 @@ import {
   renderSettings,
 } from './settings'
 import * as d3 from 'd3'
-import { initBuildTargets } from './tabs/build-targets'
 
 function reset() {
   window.location.hash = ''
@@ -641,7 +640,6 @@ async function loadData(modName, settings) {
 
   spec.updateSolution()
   initDB()
-  initBuildTargets()
 }
 
 export function init() {

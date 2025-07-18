@@ -12,7 +12,7 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '../new-tooltip'
 import { BuildTarget } from '../target'
 import { FactoryProvider, useFactory } from '../build-targets/atom'
 
-function DatebaseTab() {
+export function BuildTargets() {
   const [search, setSearch] = useState('')
   const [factory] = useFactory()
 
@@ -90,18 +90,5 @@ function ItemTooltip({ children, item }: { item: Item } & PropsWithChildren) {
         {item.name}
       </TooltipContent>
     </Tooltip>
-  )
-}
-
-export function initBuildTargets() {
-  const root_el = document.querySelector('#react-build-targets')
-  if (!root_el) {
-    throw new Error('root missing')
-  }
-  const root = createRoot(root_el)
-  root.render(
-    <FactoryProvider>
-      <DatebaseTab />
-    </FactoryProvider>
   )
 }
