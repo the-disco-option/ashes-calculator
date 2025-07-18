@@ -20,12 +20,12 @@ export function BuildTargets() {
     <div>
       <div>Build Targets</div>
       <ul>
-        {factory.targets.map((bt) => (
-          <li key={bt.id}>
-            <button>x</button>
-            {bt.itemKey}
-            {bt.count}
-            {bt.recipeKey}
+        {factory.targets.map((buildTarget, i) => (
+          <li key={buildTarget.id}>
+            <button onClick={() => spec.removeTargetIndex(i)}>x</button>
+            {buildTarget.itemKey}
+            {buildTarget.count}
+            {buildTarget.recipeKey}
           </li>
         ))}
         <li>
@@ -33,62 +33,5 @@ export function BuildTargets() {
         </li>
       </ul>
     </div>
-  )
-}
-
-const SlowTable = memo(function SlowTable({
-  search,
-  setItem,
-}: {
-  search: string
-  setItem?: (item: Item) => void
-}) {
-  const items = spec.items ? [...spec.items.values()] : []
-
-  const filteredItems = items.filter(
-    (item) => item.key.includes(search) || item.name.includes(search)
-  )
-
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th>Key</th>
-          <th>Name</th>
-          <th>Image</th>
-        </tr>
-      </thead>
-      <tbody>
-        {filteredItems.map((item) => (
-          <tr key={item.key} onClick={() => setItem?.(item)}>
-            <td>
-              <ItemTooltip item={item}>
-                <span>{item.key}</span>
-              </ItemTooltip>
-            </td>
-            <td>{item.name}</td>
-            <td>
-              <img
-                src={`https://raw.githubusercontent.com/the-disco-option/ashes-calculator-images/refs/heads/main/public/images/${item.key}.png`}
-                height="16px"
-                width="16px"
-                loading="lazy"
-              />
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  )
-})
-
-function ItemTooltip({ children, item }: { item: Item } & PropsWithChildren) {
-  return (
-    <Tooltip>
-      <TooltipTrigger asChild>{children}</TooltipTrigger>
-      <TooltipContent style={{ backgroundColor: 'black', padding: '10px' }}>
-        {item.name}
-      </TooltipContent>
-    </Tooltip>
   )
 }

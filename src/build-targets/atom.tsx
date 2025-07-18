@@ -39,9 +39,9 @@ export const addBuildingTarget = (target: BuildTarget) => {
   })
 }
 
-export const removeBuildingTarget = (target: BuildTarget) => {
+export const removeBuildingTarget = (index: number) => {
   factoryStore.set(factoryAtom, (draft) => {
-    draft.targets.splice(target.index, 1)
+    draft.targets.splice(index, 1)
   })
 }
 

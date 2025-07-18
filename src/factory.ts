@@ -604,13 +604,27 @@ class FactorySpecification {
     addBuildingTarget(target)
     return target
   }
-  removeTarget(target) {
-    removeBuildingTarget(target)
-    this.buildTargets.splice(target.index, 1)
-    for (let i = target.index; i < this.buildTargets.length; i++) {
+  /** @deprecated use removeTargetIndex */
+  removeTarget(target: BuildTarget) {
+    this.removeTargetIndex(target.index)
+  }
+
+  removeTargetIndex(index: number) {
+    if (!Number.isInteger(index) || index < 0) {
+      throw new Error()
+    }
+    const target: BuildTarget | undefined = this.buildTargets[index]
+
+    if (!target) {
+      throw new Error()
+    }
+
+    removeBuildingTarget(index)
+    this.buildTargets.splice(index, 1)
+    for (let i = index; i < this.buildTargets.length; i++) {
       this.buildTargets[i].index--
     }
-    d3.select(target.element).remove()
+    d3.select(target.element).remove() //TODO: remove d3
   }
   resetTargets() {
     this.buildTargets = []
