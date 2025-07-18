@@ -444,12 +444,23 @@ function logAndPass(obj) {
   return obj
 }
 
+// todo: replace this hellish abomination of Ruin. Necessary to parse the csv structure with variable rows. either get rid of csv or make the parser do this job.
 function parseIngredient(m, n) {
   const amount = parseInt(m[`amount${n}`])
-  const name = m[`material${n}`]
-  if (typeof name === 'string' && name.length > 0) {
-    return { amount: amount, name: slug(name) }
+  const ingredient_name = m[`material${n}`]
+
+  if (typeof ingredient_name !== 'string' || ingredient_name.length === 0) {
+    return
   }
+
+  if (Number.isNaN(amount)) {
+    console.error(
+      `Recipe Error: ${m.name}(${m.key}) \n Invalid amount for ingredient ${ingredient_name} at ${n}. is it missing from the CSV file?`
+    )
+    return
+  }
+
+  return { amount: amount, name: slug(ingredient_name) }
 }
 
 // some recipies return more than one item at a time
