@@ -21,6 +21,8 @@ export class Item {
   recipes: Recipe[]
   uses: Recipe[]
   icon: Icon
+  phase: string
+  disableRecipe: any
   constructor(
     key: string,
     name: string,

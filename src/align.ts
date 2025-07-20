@@ -35,6 +35,12 @@ export let longRateNames = new Map([
 ])
 
 export class Formatter {
+  displayFormat: string
+  ratePrecision: number
+  countPrecision: number
+  rateName: any
+  longRate: string | undefined
+  rateFactor: Rational | undefined
   constructor() {
     this.setDisplayRate(DEFAULT_RATE)
     this.displayFormat = 'decimal'
@@ -46,7 +52,7 @@ export class Formatter {
     this.longRate = longRateNames.get(rate)
     this.rateFactor = displayRates.get(rate)
   }
-  align(s, prec) {
+  align(s: string | string[], prec: number) {
     if (this.displayFormat === 'rational') {
       return s
     }
@@ -64,7 +70,7 @@ export class Formatter {
     }
     return s
   }
-  rate(rate) {
+  rate(rate: Rational) {
     rate = rate.mul(this.rateFactor)
     if (this.displayFormat === 'rational') {
       return rate.toMixed()

@@ -19,6 +19,17 @@ import * as d3 from 'd3'
 let thirty = Rational.from_float(30)
 
 export class Building {
+  key: string
+  name: any
+  categories: Set<unknown>
+  speed: any
+  prodBonus: any
+  moduleSlots: any
+  power: any
+  fuel: any
+  icon_col: any
+  icon_row: any
+  icon: Icon
   constructor(
     key,
     name,
@@ -94,6 +105,7 @@ export class Building {
 }
 
 class Miner extends Building {
+  miningSpeed: any
   constructor(
     key,
     name,
@@ -161,6 +173,7 @@ class Miner extends Building {
 }
 
 class OffshorePump extends Building {
+  pumpingSpeed: any
   constructor(key, name, col, row, pumpingSpeed) {
     super(key, name, col, row, ['offshore-pumping'], zero, zero, 0, zero, null)
     this.pumpingSpeed = pumpingSpeed

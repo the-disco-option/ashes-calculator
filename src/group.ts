@@ -12,15 +12,11 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.*/
 
+import { Item } from './item'
+
 // Sorts items into their groups and subgroups. Used chiefly by the target
 // dropdown.
-/**
- *
- * @param {Map<string, Item>} items
- * @param {*} data
- * @returns
- */
-export function getItemGroups(items, data) {
+export function getItemGroups(items: Map<string, Item>, _data) {
   const sorted_keys = [...items.keys()].sort()
   const sorted_items = sorted_keys.map((key) => items.get(key))
 

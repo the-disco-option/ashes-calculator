@@ -12,24 +12,28 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.*/
 import { Formatter } from './align'
+import { Belt } from './belt'
 import {
   bridge_addBuildingTarget,
   bridge_clearBuildingTargets,
   bridge_removeBuildingTarget,
   bridge_setItems,
 } from './build-targets/atom'
+import { Building } from './building'
 import { renderDebug } from './debug'
 import { displayItems } from './display'
 import { currentTab } from './events'
 import { formatSettings } from './fragment'
+import { Fuel } from './fuel'
 import { Item } from './item'
 import { ModuleSpec } from './module'
 import { PriorityList } from './priority'
 import { Rational, zero, half, one } from './rational'
-import { DISABLED_RECIPE_PREFIX, Recipe } from './recipe'
-import { solve } from './solve'
+import { DISABLED_RECIPE_PREFIX, Ingredient, Recipe } from './recipe'
+import { Result, solve } from './solve'
 import { BuildTarget } from './target'
 import { reapTooltips } from './tooltip'
+import { Totals } from './totals'
 import { renderTotals } from './visualize'
 import * as d3 from 'd3'
 
@@ -44,13 +48,41 @@ let DEFAULT_BUILDINGS = new Set([
   'electric-mining-drill',
 ])
 
-class FactorySpecification {
-  items: Map<string, Item> | null
-  fuel: any
+export class FactorySpecification {
+  items: Map<string, Item>
+  fuel: Fuel | null
   recipes: Map<string, Recipe> | null
   buildTargets: BuildTarget[]
+  modules: Map<string, any> | null
+  planets: Map<string, any> | null
+  buildings: Map<string, Building> | null
+  buildingKeys: Map<string, any> | null
+  belts: Map<string, any> | null
+  fuels: Map<string, any> | null
+  itemGroups: (Item | undefined)[][][] | null
+  spec: Map<any, any>
+  defaultModule: null
+  secondaryDefaultModule: null
+  defaultBeacon: null[]
+  defaultBeaconCount: Rational
+  belt: Belt | null
+  miningProd: Rational | null
+  ignore: Set<unknown>
+  disable: Set<Recipe>
+  selectedPlanets: Set<Recipe>
+  planetaryBaseline: Set<Recipe> | null
+  priority: PriorityList | null
+  defaultPriority: null
+  format: Formatter
+  lastTotals: Totals | null
+  lastPartial: Result | null
+  lastTableau: null
+  lastMetadata: null
+  lastSolution: null
+  debug: boolean
+  minerSettings: any
   constructor() {
-    this.items = null
+    this.items = new Map()
     this.recipes = null
     this.modules = null
     this.planets = null
@@ -81,7 +113,7 @@ class FactorySpecification {
     this.selectedPlanets = new Set()
     this.planetaryBaseline = null
 
-    this.priority = null
+    this.priority = new PriorityList()
     this.defaultPriority = null
 
     this.format = new Formatter()
@@ -96,14 +128,14 @@ class FactorySpecification {
     this.debug = false
   }
   setData(
-    items: Map<string, Item> | null,
-    recipes: Map<string, Recipe> | null,
-    planets: null,
+    items: Map<string, Item>,
+    recipes: Map<string, Recipe>,
+    planets: Map<string, any>,
     modules: Map<any, any>,
-    buildings: never[],
+    buildings: Building[],
     belts: Map<any, any>,
     fuels: Map<any, any>,
-    itemGroups: any[][][]
+    itemGroups: (Item | undefined)[][][]
   ) {
     this.items = items
     this.recipes = recipes
@@ -282,7 +314,7 @@ class FactorySpecification {
     this._syncPlanetDisable()
   }
   getDefaultPriorityArray() {
-    let a = []
+    let a: Array<Map<Recipe, Rational>> = []
     for (let [recipeKey, recipe] of this.recipes) {
       if (recipe.defaultPriority !== undefined) {
         let pri = recipe.defaultPriority
@@ -410,14 +442,14 @@ class FactorySpecification {
   }
   // Returns the set of recipes which may contribute to the production of
   // the given collection of items.
-  getRecipeGraph(items) {
-    let graph = new Set()
+  getRecipeGraph(items: [Item, Rational][]) {
+    let graph = new Set<Recipe>()
     for (let [item, rate] of items) {
       this._getItemGraph(item, graph)
     }
     return graph
   }
-  isFactoryTarget(recipe) {
+  isFactoryTarget(recipe: Recipe | null) {
     for (let target of this.buildTargets) {
       if (target.recipe === recipe && target.changedBuilding) {
         return true
@@ -674,7 +706,7 @@ class FactorySpecification {
     for (let target of this.buildTargets) {
       let item = target.item
       let rate = target.getRate()
-      let recipe
+      let recipe: Recipe | null = null
       if (target.changedBuilding) {
         recipe = target.recipe
       } else {
@@ -739,6 +771,8 @@ class FactorySpecification {
 }
 
 class BuildingSet {
+  categories: Set<unknown>
+  buildings: Set<any>
   constructor(building) {
     this.categories = new Set(building.categories)
     this.buildings = new Set([building])
@@ -773,6 +807,8 @@ export function buildingSort(buildings) {
 }
 
 class BuildingGroup {
+  buildings: unknown[]
+  building: any
   constructor(bSet) {
     this.buildings = Array.from(bSet)
     buildingSort(this.buildings)

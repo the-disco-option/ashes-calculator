@@ -128,6 +128,8 @@ export class BuildTarget {
   rate: Rational
   buildings: Rational
   recipe: Recipe | null
+  changedBuilding: boolean
+  element: any
   constructor(index, itemKey, item, itemGroups) {
     this.index = index
     this.itemKey = itemKey

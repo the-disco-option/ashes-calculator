@@ -16,6 +16,8 @@ import { zero, one } from './rational'
 
 // An MxN matrix of rationals.
 export class Matrix {
+  mat: any
+  rows: number
   constructor(rows, cols, mat) {
     this.rows = rows
     this.cols = cols

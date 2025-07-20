@@ -14,6 +14,8 @@ limitations under the License.*/
 'use strict'
 
 export class Rational {
+  p: any
+  q: any
   constructor(p, q) {
     if (q.lesser(bigInt.zero)) {
       p = bigInt.zero.minus(p)

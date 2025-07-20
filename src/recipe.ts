@@ -51,18 +51,20 @@ export class Recipe implements RecipeInterface {
   icon: Icon
   time: Rational
   unique: string
+  defaultPriority: undefined
+  defaultWeight: Rational
   constructor(
-    key,
-    name,
-    order,
-    col,
-    row,
-    allow_prod,
-    category,
-    time,
-    ingredients,
-    products,
-    conditions
+    key: string,
+    name: string,
+    order: any,
+    col: any,
+    row: any,
+    allow_prod: any,
+    category: any,
+    time: Rational,
+    ingredients: Ingredient[],
+    products: { item: { key: any } }[],
+    conditions: never[] | null | undefined
   ) {
     this.key = key
     this.name = name

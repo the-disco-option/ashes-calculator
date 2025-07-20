@@ -14,14 +14,18 @@ limitations under the License.*/
 
 import { getCycleRecipes } from './cycle'
 import { FactorySpecification } from './factory'
+import { Item } from './item'
 import { Matrix } from './matrix'
 import { Rational, minusOne, zero, one } from './rational'
-import { Ingredient } from './recipe'
+import { Ingredient, Recipe } from './recipe'
 import { simplex } from './simplex'
 import { Totals } from './totals'
 
 // Terminating nodes of a solution-graph.
 class OutputRecipe {
+  name: string
+  ingredients: Ingredient[]
+  products: never[]
   constructor(outputs) {
     this.name = 'output'
     this.ingredients = []
@@ -45,7 +49,16 @@ class SurplusRecipe extends OutputRecipe {
   }
 }
 
-class Result {
+interface TargetInterface {
+  item: Item
+  rate: Rational
+  recipe: Recipe
+}
+
+export class Result {
+  recipeRates: Map<any, any>
+  remaining: Map<any, any>
+  targets: TargetInterface[]
   constructor() {
     this.recipeRates = new Map()
     this.remaining = new Map()
@@ -59,8 +72,8 @@ class Result {
     let x = this.remaining.get(item) || zero
     this.remaining.set(item, x.add(rate))
   }
-  unfinishedTarget(item, rate, recipe) {
-    this.targets.push({ item, rate, recipe })
+  unfinishedTarget(item: Item, rate: Rational, recipe: Recipe) {
+    this.targets.push({ item, rate, recipe } as TargetInterface)
   }
   combine(other) {
     for (let [recipe, rate] of other.recipeRates) {
@@ -128,7 +141,10 @@ Rows:
 [result]
 */
 
-export function solve(spec: FactorySpecification, fullOutputs) {
+export function solve(
+  spec: FactorySpecification,
+  fullOutputs: TargetInterface[]
+) {
   let outputs = new Map()
   for (let { item, rate, recipe } of fullOutputs) {
     rate = rate.add(outputs.get(item) || zero)
