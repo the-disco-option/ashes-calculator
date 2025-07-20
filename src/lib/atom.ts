@@ -1,12 +1,6 @@
 import { atomWithImmer } from 'jotai-immer'
-import { atom, createStore, Provider, useAtom } from 'jotai'
-import React, {
-  memo,
-  PropsWithChildren,
-  useDeferredValue,
-  useState,
-  useSyncExternalStore,
-} from 'react'
+import { atom, createStore, useAtom } from 'jotai'
+import { memo, useDeferredValue, useState, useSyncExternalStore } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BuildTarget } from '../target'
 import { Item } from '../item'
@@ -131,8 +125,4 @@ export const bridge_setResults = (results: Iterable<TargetInterface>) => {
       })
     }
   })
-}
-
-export function FactoryProvider({ children }: PropsWithChildren) {
-  return <Provider store={factoryStore}>{children}</Provider>
 }
