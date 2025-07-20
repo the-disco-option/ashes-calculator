@@ -12,7 +12,12 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.*/
 
-function add(map, key, rate) {
+import { FactorySpecification } from './factory'
+import { Item } from './item'
+import { Rational } from './rational'
+import { Recipe } from './recipe'
+
+function add(map: Map<Item, Rational>, key: Item, rate: Rational) {
   let r = map.get(key)
   if (r === undefined) {
     r = rate
@@ -22,7 +27,14 @@ function add(map, key, rate) {
   map.set(key, r)
 }
 
-function set(map, key1, key2, value) {
+function set(
+  map:
+    | Map<Item, Map<Recipe, Rational>>
+    | Map<Item, Map<Item, Map<Recipe, Rational>>>,
+  key1: Item,
+  key2: any,
+  value: any
+) {
   let submap = map.get(key1)
   if (submap === undefined) {
     submap = new Map()
@@ -32,7 +44,27 @@ function set(map, key1, key2, value) {
 }
 
 export class Totals {
-  constructor(spec, products, rates, surplus, extraRecipes) {
+  consumers: Map<Item, Map<Item, Map<Recipe, Rational>>>
+  rates: Map<Recipe, Rational>
+  extra: Map<Item, Recipe>
+  items: Map<Item, Rational>
+  producers: Map<Item, Map<Recipe, Rational>>
+  products: Map<Item, Rational>
+  proportionate: {
+    item: Item
+    from: Recipe
+    to: Recipe
+    rate: Rational
+    fuel: boolean
+  }[]
+  surplus: Map<any, any>
+  constructor(
+    spec: FactorySpecification,
+    products: Map<any, any>,
+    rates: Map<any, any>,
+    surplus: Map<any, any>,
+    extraRecipes: Map<any, any>
+  ) {
     this.products = products
     this.rates = rates
     this.surplus = surplus

@@ -18,6 +18,7 @@ import {
   bridge_clearBuildingTargets,
   bridge_removeBuildingTarget,
   bridge_setItems,
+  bridge_setResults,
 } from './lib/atom'
 import { Building } from './building'
 import { renderDebug } from './debug'
@@ -36,6 +37,8 @@ import { reapTooltips } from './tooltip'
 import { Totals } from './totals'
 import { renderTotals } from './visualize'
 import * as d3 from 'd3'
+import { TargetInterface, TargetTuple } from './TargetInterface'
+import { Matrix } from './matrix'
 
 const DEFAULT_ITEM_KEY = 'journeyman-mining-pickaxe'
 
@@ -78,7 +81,7 @@ export class FactorySpecification {
   lastPartial: Result | null
   lastTableau: null
   lastMetadata: null
-  lastSolution: null
+  lastSolution: Matrix | null
   debug: boolean
   minerSettings: any
   constructor() {
@@ -702,7 +705,7 @@ export class FactorySpecification {
     }
   }
   solve() {
-    let outputs = []
+    let outputs: TargetTuple[] = []
     for (let target of this.buildTargets) {
       let item = target.item
       let rate = target.getRate()
@@ -716,7 +719,7 @@ export class FactorySpecification {
     }
     // JS isn't good at using tuples as Map keys/Set items, so just do this
     // quadratically. It's fine.
-    let dedupedOutputs = []
+    let dedupedOutputs: TargetInterface[] = []
     outer: for (let [origItem, origRate, origRecipe] of outputs) {
       for (let i = 0; i < dedupedOutputs.length; i++) {
         let { item, rate, recipe } = dedupedOutputs[i]
@@ -744,6 +747,19 @@ export class FactorySpecification {
     this.lastTotals = this.solve()
     this.populateModuleSpec(this.lastTotals)
     this.display()
+    console.log('totals', this.lastTotals)
+    console.log(
+      [...this.lastTotals.items.entries()].map(
+        ([item, r]) => `${item.name} - ${r.mul(Rational.from_integer(3 * 20))}`
+      )
+    )
+    bridge_setResults(
+      [...this.lastTotals.items.entries()].map(([item, r]) => ({
+        item,
+        rate: r.mul(Rational.from_integer(3 * 20)),
+        recipe: null,
+      }))
+    )
   }
   // Re-renders the current solution, without re-computing it.
   //

@@ -19,6 +19,7 @@ import { Matrix } from './matrix'
 import { Rational, minusOne, zero, one } from './rational'
 import { Ingredient, Recipe } from './recipe'
 import { simplex } from './simplex'
+import { TargetInterface } from './TargetInterface'
 import { Totals } from './totals'
 
 // Terminating nodes of a solution-graph.
@@ -47,12 +48,6 @@ class SurplusRecipe extends OutputRecipe {
     super(output)
     this.name = 'surplus'
   }
-}
-
-interface TargetInterface {
-  item: Item
-  rate: Rational
-  recipe: Recipe
 }
 
 export class Result {

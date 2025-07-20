@@ -10,6 +10,8 @@ import React, {
 import { createRoot } from 'react-dom/client'
 import { BuildTarget } from '../target'
 import { Item } from '../item'
+import { TargetInterface } from '../TargetInterface'
+import { Rational } from '../rational'
 
 export interface BuildTargetInterface {
   id: string
@@ -28,10 +30,29 @@ export interface FactoryAtomInterface {
   items: ItemInterface[]
 }
 
+export interface ResultInterface {
+  item: ItemInterface
+  amount: Rational
+}
+
+export interface ResultsAtomInterface {
+  results: ResultInterface[]
+}
+
 export const factoryAtom = atomWithImmer<FactoryAtomInterface>({
   targets: [],
   items: [],
 })
+
+export const resultsAtom = atomWithImmer<ResultsAtomInterface>({
+  results: [],
+})
+
+const craftedItemsAtom = atom((get) => {
+  return get(resultsAtom).results
+})
+
+export const useResults = () => useAtom(craftedItemsAtom)
 
 export const itemAtom = atom((get) => {
   return get(factoryAtom).items
@@ -89,6 +110,19 @@ export const bridge_setItems = (items: Iterable<Item>) => {
         key: itemClass.key,
         name: itemClass.name,
       } satisfies ItemInterface)
+    }
+  })
+}
+
+export const bridge_setResults = (results: Iterable<TargetInterface>) => {
+  factoryStore.set(resultsAtom, (draft) => {
+    draft.results = []
+    for (const { item, rate, recipe } of results) {
+      const { key, name } = item
+      draft.results.push({
+        item: { key, name },
+        amount: rate,
+      })
     }
   })
 }

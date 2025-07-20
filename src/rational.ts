@@ -148,17 +148,17 @@ export class Rational {
       this.q.times(other.q)
     )
   }
-  mul(other) {
+  mul(other: Rational) {
     if (this.isZero()) return zero
     if (other.isZero()) return zero
     if (this.isOne()) return other
     if (other.isOne()) return this
     return new Rational(this.p.times(other.p), this.q.times(other.q))
   }
-  div(other) {
+  div(other: Rational) {
     return new Rational(this.p.times(other.q), this.q.times(other.p))
   }
-  divmod(other) {
+  divmod(other: Rational) {
     var quotient = this.div(other)
     var div = quotient.floor()
     var mod = this.sub(other.mul(div))

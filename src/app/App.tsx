@@ -1,4 +1,5 @@
 import { BuildTargets } from './build-targets'
+import { Results } from './results'
 
 // Top level UI goes here
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <h1>Ashes Calculator</h1>
       <BuildTargets />
+      <Results />
     </>
   )
 }
