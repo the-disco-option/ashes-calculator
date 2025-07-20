@@ -28,6 +28,7 @@ export interface ItemInterface {
 export interface FactoryAtomInterface {
   targets: BuildTargetInterface[]
   items: ItemInterface[]
+  results: ResultInterface[]
 }
 
 export interface ResultInterface {
@@ -42,6 +43,7 @@ export interface ResultsAtomInterface {
 export const factoryAtom = atomWithImmer<FactoryAtomInterface>({
   targets: [],
   items: [],
+  results: [],
 })
 
 export const resultsAtom = atomWithImmer<ResultsAtomInterface>({
@@ -49,7 +51,11 @@ export const resultsAtom = atomWithImmer<ResultsAtomInterface>({
 })
 
 const craftedItemsAtom = atom((get) => {
-  return get(resultsAtom).results
+  const { results, targets } = get(factoryAtom)
+  console.log(results, targets)
+  return results.filter(
+    (res) => !targets.some((item) => item.itemKey === res.item.key)
+  )
 })
 
 export const useResults = () => useAtom(craftedItemsAtom)
@@ -115,7 +121,7 @@ export const bridge_setItems = (items: Iterable<Item>) => {
 }
 
 export const bridge_setResults = (results: Iterable<TargetInterface>) => {
-  factoryStore.set(resultsAtom, (draft) => {
+  factoryStore.set(factoryAtom, (draft) => {
     draft.results = []
     for (const { item, rate, recipe } of results) {
       const { key, name } = item
