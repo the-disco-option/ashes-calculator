@@ -7,7 +7,7 @@ import React, {
 import { createRoot } from 'react-dom/client'
 import { spec } from '../factory'
 import { Item } from '../item'
-import { Tooltip, TooltipContent, TooltipTrigger } from '../new-tooltip'
+import { Tooltip, TooltipContent, TooltipTrigger } from '../lib/new-tooltip'
 
 function DatebaseTab() {
   const [search, setSearch] = useState('')

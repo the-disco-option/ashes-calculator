@@ -1,4 +1,4 @@
-import { BuildTargets } from './tabs/build-targets'
+import { BuildTargets } from './build-targets'
 
 // Top level UI goes here
 

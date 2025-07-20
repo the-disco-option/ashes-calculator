@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App'
-import { FactoryProvider } from './build-targets/atom'
+import { FactoryProvider } from '../lib/atom'
 
 // Providers go here
 

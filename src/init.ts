@@ -78,7 +78,7 @@ limitations under the License.*/
 import { getBelts } from './belt'
 import { initDB } from './tabs/db'
 import { getBuildings } from './building'
-import { withKey, csv, slug } from './csv'
+import { withKey, csv, slug } from './lib/csv'
 import { resetDisplay } from './display'
 import { spec, resetSpec } from './factory'
 import { formatSettings, loadSettings } from './fragment'

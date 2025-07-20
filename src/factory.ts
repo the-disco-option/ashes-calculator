@@ -18,7 +18,7 @@ import {
   bridge_clearBuildingTargets,
   bridge_removeBuildingTarget,
   bridge_setItems,
-} from './build-targets/atom'
+} from './lib/atom'
 import { Building } from './building'
 import { renderDebug } from './debug'
 import { displayItems } from './display'

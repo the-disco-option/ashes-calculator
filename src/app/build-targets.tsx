@@ -1,8 +1,8 @@
 import { memo, PropsWithChildren, useDeferredValue, useState } from 'react'
 import { Item } from '../item'
-import { Tooltip, TooltipContent, TooltipTrigger } from '../new-tooltip'
+import { Tooltip, TooltipContent, TooltipTrigger } from '../lib/new-tooltip'
 
-import { ItemInterface, useFactory, useItems } from '../build-targets/atom'
+import { ItemInterface, useFactory, useItems } from '../lib/atom'
 import {
   addBuildTarget,
   removeBuildTarget,
