@@ -13,10 +13,12 @@ See the License for the specific language governing permissions and
 limitations under the License.*/
 'use strict'
 
+import bigInt, { BigNumber, BigInteger } from 'big-integer'
+
 export class Rational {
-  p: any
-  q: any
-  constructor(p, q) {
+  p: BigInteger
+  q: BigInteger
+  constructor(p: BigInteger, q: BigInteger) {
     if (q.lesser(bigInt.zero)) {
       p = bigInt.zero.minus(p)
       q = bigInt.zero.minus(q)
@@ -38,7 +40,10 @@ export class Rational {
     }
     return this.p.toString() + '/' + this.q.toString()
   }
-  toDecimal(maxDigits, roundingFactor) {
+  toDecimal(
+    maxDigits: number | null | undefined,
+    roundingFactor: Rational | null | undefined
+  ) {
     if (maxDigits == null) {
       maxDigits = 3
     }
@@ -47,7 +52,7 @@ export class Rational {
     }
 
     var sign = ''
-    var x = this
+    var x: Rational = this
     if (x.less(zero)) {
       sign = '-'
       x = zero.sub(x)
@@ -76,10 +81,10 @@ export class Rational {
     }
     return sign + integerPart
   }
-  toUpDecimal(maxDigits) {
+  toUpDecimal(maxDigits: number) {
     var fraction = new Rational(bigInt.one, bigInt(10).pow(maxDigits))
     var divmod = this.divmod(fraction)
-    var x = this
+    var x: Rational = this
     if (!divmod.remainder.isZero()) {
       x = x.add(fraction)
     }
@@ -123,10 +128,10 @@ export class Rational {
     }
     return result
   }
-  equal(other) {
+  equal(other: Rational) {
     return this.p.equals(other.p) && this.q.equals(other.q)
   }
-  less(other) {
+  less(other: Rational) {
     return this.p.times(other.q).lesser(this.q.times(other.p))
   }
   abs() {
@@ -135,13 +140,13 @@ export class Rational {
     }
     return this
   }
-  add(other) {
+  add(other: Rational) {
     return new Rational(
       this.p.times(other.q).plus(this.q.times(other.p)),
       this.q.times(other.q)
     )
   }
-  sub(other) {
+  sub(other: Rational) {
     if (other.isZero()) return this
     return new Rational(
       this.p.times(other.q).subtract(this.q.times(other.p)),
@@ -168,11 +173,11 @@ export class Rational {
     return new Rational(this.q, this.p)
   }
   // exp must be a JS float with an integer in it.
-  pow(exp) {
+  pow(exp: any) {
     return new Rational(this.p.pow(exp), this.q.pow(exp))
   }
 
-  static from_decimal(s) {
+  static from_decimal(s: string) {
     let i = s.indexOf('.')
     if (i === -1 || i === s.length - 1) {
       return new Rational(bigInt(s), bigInt.one)
@@ -183,7 +188,7 @@ export class Rational {
     return integerPart.add(new Rational(numerator, denominator))
   }
 
-  static from_string(s) {
+  static from_string(s: string) {
     var i = s.indexOf('/')
     if (i === -1) {
       return Rational.from_decimal(s)
@@ -199,11 +204,11 @@ export class Rational {
     return new Rational(p, q)
   }
 
-  static from_integer(x) {
+  static from_integer(x: number) {
     return Rational.from_floats(x, 1)
   }
 
-  static from_float(arg) {
+  static from_float(arg: number) {
     if (arg === 0 || !Number.isFinite(arg) || Number.isNaN(arg)) {
       return zero
     }
@@ -229,7 +234,7 @@ export class Rational {
 
   // This function is a hack, which intentionally limits its precision
   // in order to paper over floating-point inaccuracies.
-  static from_float_approximate(x) {
+  static from_float_approximate(x: number) {
     if (Number.isInteger(x)) {
       return Rational.from_floats(x, 1)
     }
@@ -245,7 +250,7 @@ export class Rational {
     return r
   }
 
-  static from_floats(p, q) {
+  static from_floats(p: number, q: number) {
     return new Rational(bigInt(p), bigInt(q))
   }
 }
