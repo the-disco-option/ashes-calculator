@@ -4,7 +4,7 @@ import { memo, useDeferredValue, useState, useSyncExternalStore } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BuildTarget } from '../target'
 import { Item } from '../item'
-import { TargetInterface } from '../TargetInterface'
+import { TargetInterface } from './TargetInterface'
 import { Rational } from '../rational'
 
 export interface BuildTargetInterface {

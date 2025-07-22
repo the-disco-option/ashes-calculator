@@ -1,6 +1,6 @@
-import { Item } from './item'
-import { Rational } from './rational'
-import { Recipe } from './recipe'
+import { Item } from '../item'
+import { Rational } from '../rational'
+import { Recipe } from '../recipe'
 
 export interface TargetInterface {
   item: Item

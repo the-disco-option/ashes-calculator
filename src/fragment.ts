@@ -33,8 +33,8 @@ import { currentMod, DEFAULT_TITLE } from './settings'
 import { sorted } from './sort'
 import pako from 'pako'
 
-function getModuleKey(module) {
-  let moduleKey
+function getModuleKey(module: { shortName: () => any } | null) {
+  let moduleKey: string
   if (module === null) {
     moduleKey = 'null'
   } else {
@@ -43,7 +43,11 @@ function getModuleKey(module) {
   return moduleKey
 }
 
-export function formatSettings(excludeTitle, overrideTab, targets) {
+export function formatSettings(
+  excludeTitle: boolean | undefined,
+  overrideTab: string | undefined,
+  targets: any[][] | undefined
+) {
   let settings = ''
   if (!excludeTitle && document.title !== DEFAULT_TITLE) {
     settings += 'title=' + encodeURIComponent(document.title) + '&'
@@ -153,7 +157,10 @@ export function formatSettings(excludeTitle, overrideTab, targets) {
 
   if (!spec.isDefaultPlanet()) {
     let planets = []
-    for (let p of sorted(spec.selectedPlanets, (p) => p.order)) {
+    for (let p of sorted(
+      spec.selectedPlanets,
+      (p: { order: any }) => p.order
+    )) {
       planets.push(p.key)
     }
     settings += '&planet=' + planets.join(',')
@@ -237,7 +244,7 @@ export function formatSettings(excludeTitle, overrideTab, targets) {
   return settings
 }
 
-export function loadSettings(fragment) {
+export function loadSettings(fragment: string) {
   let settings = new Map()
   fragment = fragment.substr(1)
   let pairs = fragment.split('&')

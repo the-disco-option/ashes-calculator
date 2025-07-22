@@ -37,7 +37,7 @@ import { reapTooltips } from './tooltip'
 import { Totals } from './totals'
 import { renderTotals } from './visualize'
 import * as d3 from 'd3'
-import { TargetInterface, TargetTuple } from './TargetInterface'
+import { TargetInterface, TargetTuple } from './lib/TargetInterface'
 import { Matrix } from './matrix'
 
 const DEFAULT_ITEM_KEY = 'journeyman-mining-pickaxe'

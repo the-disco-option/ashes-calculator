@@ -19,7 +19,7 @@ import { Matrix } from './matrix'
 import { Rational, minusOne, zero, one } from './rational'
 import { Ingredient, Recipe } from './recipe'
 import { simplex } from './simplex'
-import { TargetInterface } from './TargetInterface'
+import { TargetInterface } from './lib/TargetInterface'
 import { Totals } from './totals'
 
 // Terminating nodes of a solution-graph.
