@@ -17,6 +17,6 @@ export function setBuildTargetAmount(index: number, newAmount: number) {
     throw new Error(`No target at index ${index}`)
   }
 
-  target.setRate(index)
+  target.setRate(newAmount)
   changeRateHandler(target)()
 }
