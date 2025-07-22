@@ -27,6 +27,7 @@
     "immer": "^10.1.1",
     "jotai": "^2.12.4",
     "jotai-immer": "^0.4.1",
+    "pako": "^2.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "tailwindcss": "^4.1.11",
@@ -35,6 +36,7 @@
   },
   "devDependencies": {
     "@types/d3": "^7.4.3",
+    "@types/pako": "^2.0.3",
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.1",
     "prettier": "^3.4.2",

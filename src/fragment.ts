@@ -31,6 +31,7 @@ import { spec, DEFAULT_BELT, DEFAULT_FUEL } from './factory'
 import { Rational } from './rational'
 import { currentMod, DEFAULT_TITLE } from './settings'
 import { sorted } from './sort'
+import pako from 'pako'
 
 function getModuleKey(module) {
   let moduleKey

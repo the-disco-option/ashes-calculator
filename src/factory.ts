@@ -69,7 +69,7 @@ export class FactorySpecification {
   defaultBeacon: null[]
   defaultBeaconCount: Rational
   belt: Belt | null
-  miningProd: Rational | null
+  miningProd: Rational
   ignore: Set<unknown>
   disable: Set<Recipe>
   selectedPlanets: Set<Recipe>
@@ -109,7 +109,7 @@ export class FactorySpecification {
 
     this.fuel = null
 
-    this.miningProd = null
+    this.miningProd = zero
 
     this.ignore = new Set()
     this.disable = new Set()
