@@ -4,10 +4,12 @@ import { changeRateHandler } from '../target'
 
 export function addBuildTarget(key: string) {
   spec.addTarget(key)
+  spec.updateSolution()
 }
 
 export function removeBuildTarget(index: number) {
   spec.removeTargetIndex(index)
+  spec.updateSolution()
 }
 
 export function setBuildTargetAmount(index: number, newAmount: number) {
@@ -19,4 +21,5 @@ export function setBuildTargetAmount(index: number, newAmount: number) {
 
   target.setRate(newAmount)
   changeRateHandler(target)()
+  spec.updateSolution()
 }
