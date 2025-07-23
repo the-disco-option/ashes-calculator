@@ -1,12 +1,12 @@
 import React from 'react'
-import { ItemInterface, useResults } from '../lib/atom'
+import { ItemInterface, useRawResults, useResults } from '../lib/atom'
 
 type ResultsProps = {}
 
 export const Results: React.FC<ResultsProps> = () => {
   return (
     <div className="p-4">
-      <p>Required Resources</p>
+      <p>Required Raw Resources</p>
       <ul>
         <ResultsList />
       </ul>
@@ -15,7 +15,7 @@ export const Results: React.FC<ResultsProps> = () => {
 }
 
 const ResultsList = () => {
-  const [results] = useResults()
+  const [results] = useRawResults()
 
   return (
     <div style={{ maxHeight: '10rem', overflowY: 'scroll' }}>

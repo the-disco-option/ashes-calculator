@@ -17,6 +17,8 @@ export interface BuildTargetInterface {
 export interface ItemInterface {
   key: string
   name: string
+  /** Indicatates if this should be listed as a raw or primary material, or as an intermediate */
+  isRaw: boolean
 }
 
 export interface FactoryAtomInterface {
@@ -52,7 +54,13 @@ const craftedItemsAtom = atom((get) => {
   )
 })
 
+const rawResultsAtom = atom((get) => {
+  const results = get(craftedItemsAtom)
+  return results.filter((res) => res.item.isRaw)
+})
+
 export const useResults = () => useAtom(craftedItemsAtom)
+export const useRawResults = () => useAtom(rawResultsAtom)
 
 export const itemAtom = atom((get) => {
   return get(factoryAtom).items
@@ -109,6 +117,7 @@ export const bridge_setItems = (items: Iterable<Item>) => {
       draft.items.push({
         key: itemClass.key,
         name: itemClass.name,
+        isRaw: itemClass.isRawMaterial,
       } satisfies ItemInterface)
     }
   })
@@ -118,9 +127,9 @@ export const bridge_setResults = (results: Iterable<TargetInterface>) => {
   factoryStore.set(factoryAtom, (draft) => {
     draft.results = []
     for (const { item, rate, recipe } of results) {
-      const { key, name } = item
+      const { key, name, isRawMaterial } = item
       draft.results.push({
-        item: { key, name },
+        item: { key, name, isRaw: isRawMaterial },
         amount: rate,
       })
     }
