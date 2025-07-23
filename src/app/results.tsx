@@ -15,14 +15,14 @@ export const Results: React.FC<ResultsProps> = () => {
 }
 
 const ResultsList = () => {
-  const [results] = useRawResults()
+  const [{ rawCosts, fuelCost }] = useRawResults()
 
   return (
     <div style={{ maxHeight: '10rem', overflowY: 'scroll' }}>
       <table>
         <thead></thead>
         <tbody>
-          {results.map((result) => (
+          {rawCosts.map((result) => (
             <tr key={result.item.key}>
               <td>
                 <img
@@ -40,6 +40,7 @@ const ResultsList = () => {
           ))}
         </tbody>
       </table>
+      <span>Fuel required: {fuelCost?.amount.toFloat()} units</span>
     </div>
   )
 }

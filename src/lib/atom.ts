@@ -56,7 +56,11 @@ const craftedItemsAtom = atom((get) => {
 
 const rawResultsAtom = atom((get) => {
   const results = get(craftedItemsAtom)
-  return results.filter((res) => res.item.isRaw)
+  const rawCosts = results
+    .filter((res) => res.item.isRaw)
+    .filter((res) => res.item.key != 'fuel')
+  const fuelCost = results.find((res) => res.item.key == 'fuel')
+  return { rawCosts, fuelCost }
 })
 
 export const useResults = () => useAtom(craftedItemsAtom)
