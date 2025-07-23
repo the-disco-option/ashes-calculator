@@ -55,6 +55,9 @@ export function getFuel(data, items) {
   let fuelCategories = new Map()
   for (let d of data.fuel) {
     let item = items.get(d.item_key)
+    if (!item) {
+      debugger
+    }
     let fuel = new Fuel(
       d.item_key,
       item.name,

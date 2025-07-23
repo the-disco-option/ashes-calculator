@@ -338,7 +338,8 @@ function createItems(materials: RecipeWithSkill[]) {
         group: 'intermediate-products',
         subgroup: 'science-pack',
         type: 'item',
-        isRawMaterial: d.skill.category == Gathering,
+        isRawMaterial:
+          d.skill.category == Gathering || d.skill.category == Other, // count vendor items as raw materials here
       }) satisfies ItemData
   )
 }
