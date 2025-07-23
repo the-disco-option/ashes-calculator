@@ -1,4 +1,4 @@
-import { z } from 'zod/v4'
+import { boolean, z } from 'zod/v4'
 
 interface Material {
   key: string
@@ -85,7 +85,7 @@ import { formatSettings, loadSettings } from './fragment'
 import { getFuel } from './fuel'
 import { getItemGroups } from './group'
 import { getSprites } from './icon'
-import { getItems } from './item'
+import { getItems, ItemData } from './item'
 import { getModules } from './module'
 import { getPlanets } from './planet'
 import { getRecipes, RecipeInterface } from './recipe'
@@ -213,19 +213,20 @@ const other_skills = ['drops', 'vendor']
 const file_path_prefix = ['data/materials']
 
 class ArtisanCategory {
-  constructor(name) {
+  name: string
+  key: string
+  constructor(name: string) {
     this.name = name
     this.key = slug(name)
   }
 }
 
 class ArtisanSkill {
-  /**
-   *
-   * @param {string} name
-   * @param {ArtisanCategory} category
-   */
-  constructor(name, category) {
+  name: string
+  key: string
+  category: ArtisanCategory
+
+  constructor(name: string, category: ArtisanCategory) {
     this.name = name
     this.key = slug(name)
     this.category = category
@@ -303,6 +304,8 @@ const RecipeSchema = z
 
 type Recipe = z.output<typeof RecipeSchema>
 
+type RecipeWithSkill = Recipe & { skill: ArtisanSkill }
+
 async function loadMaterials() {
   const data = await Promise.all([
     ...artisan_skills_list.map((skill) =>
@@ -310,23 +313,34 @@ async function loadMaterials() {
         `${file_path_prefix}/${skill.category.key}/${skill.key}.csv`,
         RecipeSchema
       ).then((rows) =>
-        rows.map((row) => ({ ...row, skill: skill, key: slug(row.name) }))
+        rows.map(
+          (row) =>
+            ({
+              ...row,
+              skill: skill,
+              key: slug(row.name), // TODO: figure out why removing this breaks the app.
+            }) satisfies RecipeWithSkill
+        )
       )
     ),
   ])
   return data.flat()
 }
 
-function createItems(materials: Recipe[]) {
-  return materials.map((d) => ({
-    key: d.key,
-    localized_name: { en: d.name },
-    stack_size: 20,
-    order: 'zz[Western Larch Timber]',
-    group: 'intermediate-products',
-    subgroup: 'science-pack',
-    type: 'item',
-  }))
+function createItems(materials: RecipeWithSkill[]) {
+  return materials.map(
+    (d) =>
+      ({
+        key: d.key,
+        localized_name: { en: d.name },
+        stack_size: 20,
+        order: 'zz[Western Larch Timber]',
+        group: 'intermediate-products',
+        subgroup: 'science-pack',
+        type: 'item',
+        isRawMaterial: d.skill.category == Gathering,
+      }) satisfies ItemData
+  )
 }
 
 function createBuildings() {

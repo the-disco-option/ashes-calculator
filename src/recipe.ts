@@ -534,6 +534,7 @@ export function getRecipes(data, items) {
       }
       products.push(new Ingredient(item, ratAmount))
     }
+    // CREATING MINING RECIPES
     recipes.set(
       d.key,
       new MiningRecipe(

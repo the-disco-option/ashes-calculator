@@ -15,6 +15,20 @@ import { Icon } from './icon'
 import { DisabledRecipe, Recipe } from './recipe'
 import * as d3 from 'd3'
 
+export interface ItemData {
+  key: string
+  localized_name: {
+    en: string
+    [lang: string]: string
+  }
+  stack_size: number
+  order: string
+  group: string
+  subgroup: string
+  type: string
+  isRawMaterial?: boolean
+}
+
 export class Item {
   key: string
   name: string
@@ -23,42 +37,40 @@ export class Item {
   icon: Icon
   phase: string
   disableRecipe: any
-  constructor(
-    key: string,
-    name: string,
-    col,
-    row,
-    phase,
-    group,
-    subgroup,
-    order
-  ) {
-    this.key = key
-    this.name = name
-    this.phase = phase
+  isRawMaterial: boolean = false
+  icon_col: undefined
+  icon_row: undefined
+  group: any
+  subgroup: any
+  order: any
+  constructor(data: ItemData) {
+    this.key = data.key
+    this.name = data.localized_name.en
+    this.phase = 'solid'
     this.recipes = []
     this.uses = []
+    this.isRawMaterial = !!data.isRawMaterial
 
-    this.icon_col = col
-    this.icon_row = row
-    this.icon = new Icon(this, name, key)
+    this.icon_col = undefined
+    this.icon_row = undefined
+    this.icon = new Icon(this, data.localized_name.en, data.key)
 
-    this.group = group
-    this.subgroup = subgroup
-    this.order = order
+    this.group = data.group
+    this.subgroup = data.subgroup
+    this.order = data.order
 
     this.disableRecipe = new DisabledRecipe(this)
   }
   allRecipes() {
     return this.recipes.concat([this.disableRecipe])
   }
-  addRecipe(recipe) {
+  addRecipe(recipe: Recipe) {
     this.recipes.push(recipe)
   }
-  addUse(recipe) {
+  addUse(recipe: Recipe) {
     this.uses.push(recipe)
   }
-  renderTooltip(extra) {
+  renderTooltip(extra: any) {
     if (this.recipes.length === 1 && this.recipes[0].name === this.name) {
       return this.recipes[0].renderTooltip(extra)
     }
@@ -74,27 +86,14 @@ export class Item {
   }
 }
 
-export function getItems(data) {
+export function getItems(data: { items: ItemData[] }) {
   let items = new Map()
-  for (let d of data.items) {
-    if (!d.localized_name) {
-      console.log('bad item:', d)
+  for (let itemData of data.items) {
+    if (!itemData.localized_name) {
+      console.log('bad item:', itemData)
       continue
     }
-    let phase = d.type === 'fluid' ? 'fluid' : 'solid'
-    items.set(
-      d.key,
-      new Item(
-        d.key,
-        d.localized_name.en,
-        d.icon_col,
-        d.icon_row,
-        phase,
-        d.group,
-        d.subgroup,
-        d.order
-      )
-    )
+    items.set(itemData.key, new Item(itemData))
   }
   return items
 }
